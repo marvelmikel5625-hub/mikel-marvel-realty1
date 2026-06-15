@@ -38,11 +38,16 @@
     </div>
 </nav>
 
+<!-- Urgent Notice Banner -->
+<div class="bg-red-600 text-white py-3 px-4 text-center">
+    <p class="text-sm font-semibold">⚠️ IMPORTANT: Coconut sales at Starcrest The Annex close on June 30th, 2026! ⚠️</p>
+</div>
+
 <!-- Page Header -->
 <section class="bg-charcoal text-white py-16">
     <div class="max-w-7xl mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Properties</h1>
-        <p class="text-gray-300 text-lg">Discover genuine lands and investment properties across Ogun State</p>
+        <p class="text-gray-300 text-lg">Discover genuine lands, agro investments, and properties across Ogun State</p>
     </div>
 </section>
 
@@ -53,18 +58,18 @@
             <select id="typeFilter" class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
                 <option value="all">All Types</option>
                 <option value="Land">Land</option>
-                <option value="House">House</option>
-                <option value="Apartment">Apartment</option>
+                <option value="Agro">Agro Investment</option>
             </select>
             <select id="locationFilter" class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
                 <option value="all">All Locations</option>
                 <option value="Abeokuta">Abeokuta</option>
-                <option value="Olodo">Olodo</option>
-                <option value="Odeda">Odeda</option>
+                <option value="Olodo">Olodo/Odeda</option>
+                <option value="Alabata">Alabata, FUNAAB</option>
             </select>
             <select id="priceFilter" class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
                 <option value="all">All Prices</option>
-                <option value="0-5000000">₦0 - ₦5M</option>
+                <option value="0-1000000">₦0 - ₦1M</option>
+                <option value="1000000-5000000">₦1M - ₦5M</option>
                 <option value="5000000-15000000">₦5M - ₦15M</option>
                 <option value="15000000-30000000">₦15M - ₦30M</option>
                 <option value="30000000+">₦30M+</option>
@@ -94,7 +99,7 @@
                     <span class="text-2xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
                     <span class="text-xs text-gray-400 -mt-1">REALTY</span>
                 </a>
-                <p class="text-gray-400 text-sm">Your trusted real estate partner in Ogun State and beyond.</p>
+                <p class="text-gray-400 text-sm">Your trusted real estate partner in Ogun State.</p>
             </div>
             <div>
                 <h3 class="text-lg font-bold mb-4">Quick Links</h3>
@@ -106,11 +111,11 @@
                 </ul>
             </div>
             <div>
-                <h3 class="text-lg font-bold mb-4">Locations</h3>
+                <h3 class="text-lg font-bold mb-4">Developers</h3>
                 <ul class="space-y-2 text-gray-400 text-sm">
-                    <li><a href="#" class="hover:text-gold transition">Kobape, Abeokuta</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Olodo, Odeda</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Ogun State</a></li>
+                    <li>Lifescape Global</li>
+                    <li>Astracrest Investment Limited</li>
+                    <li>Luminous Hills</li>
                 </ul>
             </div>
             <div>
@@ -123,7 +128,7 @@
             </div>
         </div>
         <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 Mikel Marvel Realty. All rights reserved.</p>
+            <p>&copy; 2026 Mikel Marvel Realty. All rights reserved.</p>
         </div>
     </div>
 </footer>
@@ -135,120 +140,28 @@
 
 <script>
     const properties = [
-        {
-            id: 1,
-            title: 'Greenstone Garden - 300sqm Plot',
-            location: 'Kobape, Abeokuta, Ogun State',
-            price: 2500000,
-            type: 'Land',
-            beds: 0,
-            baths: 0,
-            sqm: 300,
-            image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Greenstone+Garden',
-            status: 'available',
-            features: 'Smart Garden Security, Greenery, Central Water System',
-            titleDoc: 'C of O File No: OW/PL/C642',
-            developer: 'Lifescape Global'
-        },
-        {
-            id: 2,
-            title: 'Greenstone Garden - 600sqm Plot',
-            location: 'Kobape, Abeokuta, Ogun State',
-            price: 4000000,
-            type: 'Land',
-            beds: 0,
-            baths: 0,
-            sqm: 600,
-            image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Greenstone+Garden',
-            status: 'available',
-            features: 'Smart Garden Security, Greenery, Central Water System',
-            titleDoc: 'C of O File No: OW/PL/C642',
-            developer: 'Lifescape Global'
-        },
-        {
-            id: 3,
-            title: 'Greenstone Garden - 6 Plots (Acre Deal)',
-            location: 'Kobape, Abeokuta, Ogun State',
-            price: 24000000,
-            type: 'Land',
-            beds: 0,
-            baths: 0,
-            sqm: 2500,
-            image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Greenstone+Garden+Acre',
-            status: 'available',
-            features: '6 Plots, Flexible Payment Plan up to 12 months',
-            titleDoc: 'C of O File No: OW/PL/C642'
-        },
-        {
-            id: 4,
-            title: 'Luminous Hills Estate - 1 Hectare',
-            location: 'Olodo, Odeda LG, Ogun State',
-            price: 12500000,
-            type: 'Land',
-            beds: 0,
-            baths: 0,
-            sqm: 10000,
-            image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Luminous+Hills',
-            status: 'available',
-            features: 'Registered Survey & Deed of Assignment, 6 months interest-free payment',
-            titleDoc: 'C of O'
-        },
-        {
-            id: 5,
-            title: 'Luminous Hills Estate - 1 Acre',
-            location: 'Olodo, Odeda LG, Ogun State',
-            price: 5000000,
-            type: 'Land',
-            beds: 0,
-            baths: 0,
-            sqm: 4047,
-            image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Luminous+Hills',
-            status: 'available',
-            features: 'Registered Survey & Deed of Assignment, Initial deposit ₦1M',
-            titleDoc: 'Deed of Assignment'
-        },
-        {
-            id: 6,
-            title: 'Starcrest The Annex - 3 Acres',
-            location: 'Ogun State',
-            price: 18000000,
-            type: 'Land',
-            beds: 0,
-            baths: 0,
-            sqm: 12140,
-            image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex',
-            status: 'available',
-            features: '18 Plots, 180 Coconut trees',
-            developer: 'Astra Crest Investment Limited'
-        },
-        {
-            id: 7,
-            title: 'Starcrest The Annex - 1 Hectare',
-            location: 'Ogun State',
-            price: 15000000,
-            type: 'Land',
-            beds: 0,
-            baths: 0,
-            sqm: 10000,
-            image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex',
-            status: 'available',
-            features: '150 Coconut trees',
-            developer: 'Astra Crest Investment Limited'
-        },
-        {
-            id: 8,
-            title: 'Starcrest The Annex - 5 Acres',
-            location: 'Ogun State',
-            price: 30000000,
-            type: 'Land',
-            beds: 0,
-            baths: 0,
-            sqm: 20234,
-            image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex',
-            status: 'available',
-            features: '30 Plots, 300 Coconut trees',
-            developer: 'Astra Crest Investment Limited'
-        }
+        // GREENSTONE GARDEN - Kobape
+        { id: 1, title: 'Greenstone Garden - 300sqm', location: 'Kobape, Abeokuta', price: 2500000, type: 'Land', sqm: 300, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Greenstone+Garden', status: 'available', deposit: '₦500,000', features: 'Smart Garden Security, Greenery, Central Water System, C of O File No: OW/PL/C642', developer: 'Lifescape Global' },
+        { id: 2, title: 'Greenstone Garden - 600sqm', location: 'Kobape, Abeokuta', price: 4000000, type: 'Land', sqm: 600, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Greenstone+Garden', status: 'available', deposit: '₦500,000', features: 'Smart Garden Security, Greenery, Central Water System, C of O File No: OW/PL/C642', developer: 'Lifescape Global' },
+        { id: 3, title: 'Greenstone Garden - 6 Plots (Acre Deal)', location: 'Kobape, Abeokuta', price: 24000000, type: 'Land', sqm: 2500, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Greenstone+Garden+Acre', status: 'available', deposit: '₦2,500,000', features: '6 Plots, Flexible 12-month payment plan', developer: 'Lifescape Global' },
+        
+        // LUMINOUS HILLS - Olodo
+        { id: 4, title: 'Luminous Hills - 1 Hectare', location: 'Olodo, Odeda LG', price: 12500000, type: 'Land', sqm: 10000, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Luminous+Hills', status: 'available', deposit: '₦2,000,000', features: 'Registered Survey & Deed of Assignment, 6 months interest-free', developer: 'Luminous Hills' },
+        { id: 5, title: 'Luminous Hills - 1 Acre', location: 'Olodo, Odeda LG', price: 5000000, type: 'Land', sqm: 4047, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Luminous+Hills', status: 'available', deposit: '₦1,000,000', features: 'Registered Survey & Deed of Assignment, 6 months interest-free', developer: 'Luminous Hills' },
+        { id: 6, title: 'Luminous Hills - 600sqm', location: 'Olodo, Odeda LG', price: 900000, type: 'Land', sqm: 600, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Luminous+Hills', status: 'available', deposit: '₦300,000', features: 'Fast selling, pay within 6 months no interest', developer: 'Luminous Hills' },
+        { id: 7, title: 'Luminous Hills - 300sqm', location: 'Olodo, Odeda LG', price: 450000, type: 'Land', sqm: 300, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Luminous+Hills', status: 'available', deposit: '₦150,000', features: 'Fast selling, pay within 6 months no interest', developer: 'Luminous Hills' },
+        
+        // STARCREST THE ANNEX - Agro Investment
+        { id: 8, title: 'Starcrest - 1 Plot (Agro)', location: 'Alabata, FUNAAB Axis', price: 1000000, type: 'Agro', sqm: 500, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '10 Coconut trees, Site clearing ongoing', developer: 'Astracrest Investment Limited' },
+        { id: 9, title: 'Starcrest - 2 Plots', location: 'Alabata, FUNAAB Axis', price: 2000000, type: 'Agro', sqm: 1000, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '20 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 10, title: 'Starcrest - 3 Plots', location: 'Alabata, FUNAAB Axis', price: 3000000, type: 'Agro', sqm: 1500, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '30 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 11, title: 'Starcrest - 1 Acre (Agro)', location: 'Alabata, FUNAAB Axis', price: 6000000, type: 'Agro', sqm: 4047, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '60 Coconut trees, Farm workers lodge under construction', developer: 'Astracrest Investment Limited' },
+        { id: 12, title: 'Starcrest - 2 Acres', location: 'Alabata, FUNAAB Axis', price: 12000000, type: 'Agro', sqm: 8094, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '120 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 13, title: 'Starcrest - 3 Acres', location: 'Alabata, FUNAAB Axis', price: 18000000, type: 'Agro', sqm: 12140, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '18 Plots, 180 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 14, title: 'Starcrest - 5 Acres', location: 'Alabata, FUNAAB Axis', price: 30000000, type: 'Agro', sqm: 20234, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '30 Plots, 300 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 15, title: 'Starcrest - 1 Hectare', location: 'Alabata, FUNAAB Axis', price: 15000000, type: 'Agro', sqm: 10000, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '150 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 16, title: 'Starcrest - 2 Hectares', location: 'Alabata, FUNAAB Axis', price: 30000000, type: 'Agro', sqm: 20000, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '300 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 17, title: 'Starcrest - 5 Hectares', location: 'Alabata, FUNAAB Axis', price: 75000000, type: 'Agro', sqm: 50000, image: 'https://placehold.co/600x400/1A1A1A/C6A55C?text=Starcrest+Annex', status: 'available', deposit: 'Contact Us', features: '75 Plots, 750 Coconut trees', developer: 'Astracrest Investment Limited' }
     ];
 
     function formatPrice(price) {
@@ -265,7 +178,8 @@
             if (typeFilter !== 'all' && prop.type !== typeFilter) return false;
             if (locationFilter !== 'all' && !prop.location.includes(locationFilter)) return false;
             if (priceFilter !== 'all') {
-                if (priceFilter === '0-5000000' && prop.price > 5000000) return false;
+                if (priceFilter === '0-1000000' && prop.price > 1000000) return false;
+                if (priceFilter === '1000000-5000000' && (prop.price < 1000000 || prop.price > 5000000)) return false;
                 if (priceFilter === '5000000-15000000' && (prop.price < 5000000 || prop.price > 15000000)) return false;
                 if (priceFilter === '15000000-30000000' && (prop.price < 15000000 || prop.price > 30000000)) return false;
                 if (priceFilter === '30000000+' && prop.price < 30000000) return false;
@@ -286,24 +200,25 @@
         noResults.classList.add('hidden');
         grid.innerHTML = filtered.map(prop => `
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
-                <div class="relative h-64">
+                <div class="relative h-56">
                     <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover">
                     <div class="absolute top-4 left-4 bg-gold text-black px-2 py-1 rounded text-xs font-semibold">${prop.type}</div>
                     <div class="absolute top-4 right-4 bg-green-500 text-white px-2 py-1 rounded text-xs font-semibold">Available</div>
                 </div>
                 <div class="p-5">
                     <div class="text-2xl font-bold text-gold mb-2">${formatPrice(prop.price)}</div>
-                    <h3 class="font-bold text-xl mb-2">${prop.title}</h3>
-                    <p class="text-gray-500 text-sm mb-3 flex items-center gap-1">📍 ${prop.location}</p>
-                    <div class="mb-3">
-                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Initial Deposit: ₦${prop.id === 1 || prop.id === 2 ? '500,000' : prop.id === 4 ? '2,000,000' : prop.id === 5 ? '1,000,000' : 'Contact Us'}</span>
+                    <h3 class="font-bold text-lg mb-2">${prop.title}</h3>
+                    <p class="text-gray-500 text-sm mb-2 flex items-center gap-1">📍 ${prop.location}</p>
+                    <div class="mb-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Initial Deposit: ${prop.deposit || 'Contact Us'}</span>
+                        ${prop.developer ? `<span class="text-xs bg-gold/20 ml-2 px-2 py-1 rounded">${prop.developer}</span>` : ''}
                     </div>
-                    <div class="flex items-center gap-4 mb-4 text-gray-600 text-sm">
+                    <div class="flex items-center gap-2 mb-3 text-gray-600 text-xs">
                         <div class="flex items-center gap-1">📐 ${prop.sqm} sqm</div>
                     </div>
-                    <p class="text-gray-500 text-xs mb-3">${prop.features || 'Flexible payment plans available'}</p>
-                    <a href="https://wa.me/2349071049271?text=Hello%2C%20I'm%20interested%20in%20${encodeURIComponent(prop.title)}%20located%20at%20${encodeURIComponent(prop.location)}%20priced%20at%20${formatPrice(prop.price)}" target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg font-semibold hover:bg-charcoal/90 transition">
-                        Inquire on WhatsApp
+                    <p class="text-gray-500 text-xs mb-3 line-clamp-2">${prop.features}</p>
+                    <a href="https://wa.me/2349071049271?text=Hello%2C%20I'm%20interested%20in%20${encodeURIComponent(prop.title)}%20located%20at%20${encodeURIComponent(prop.location)}%20priced%20at%20${formatPrice(prop.price)}%0A%0APlease%20send%20me%20more%20details%20about%20this%20property." target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-charcoal/90 transition">
+                        Inquire on WhatsApp →
                     </a>
                 </div>
             </div>
