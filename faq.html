@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Mikel Marvel Realty</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAF8F5; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        .bg-gold { background-color: #C6A55C; }
+        .text-gold { color: #C6A55C; }
+        .bg-charcoal { background-color: #1A1A1A; }
+        .faq-question { cursor: pointer; transition: all 0.3s ease; }
+        .faq-question:hover { background-color: #F0EDE8; }
+        .faq-answer { display: none; padding-top: 0.5rem; }
+        .faq-answer.open { display: block; }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="bg-[#0D0D0D] text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
+                <span class="text-[10px] text-gray-400 -mt-1">REALTY</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-sm hover:text-gold transition">Home</a>
+                <a href="properties.html" class="text-sm hover:text-gold transition">Properties</a>
+                <a href="about.html" class="text-sm hover:text-gold transition">About</a>
+                <a href="contact.html" class="text-sm hover:text-gold transition">Contact</a>
+                <a href="partners.html" class="text-sm hover:text-gold transition">Partners</a>
+                <a href="faq.html" class="text-sm text-gold transition">FAQ</a>
+                <a href="https://wa.me/2349071049271" target="_blank" class="bg-gold text-black px-5 py-1.5 rounded-full text-sm font-semibold">Book Inspection</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="bg-charcoal text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+        <p class="text-gray-300 text-lg">Find answers to common questions about our properties and services</p>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="space-y-4">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="faq-question p-5 flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <h3 class="font-bold text-lg">What properties are currently available?</h3>
+                    <span class="text-2xl text-gold">+</span>
+                </div>
+                <div class="faq-answer px-5 pb-5 text-gray-600">We have various properties including Greenstone Garden (Abeokuta), Pistis Gardens (Ibadan), Southern-Crest (Ibadan), Nova Ville (Ibefun), and Starcrest The Annex (Agro Investment in Alabata). Check our <a href="properties.html" class="text-gold font-semibold">Properties page</a> for full details.</div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="faq-question p-5 flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <h3 class="font-bold text-lg">Do you offer flexible payment plans?</h3>
+                    <span class="text-2xl text-gold">+</span>
+                </div>
+                <div class="faq-answer px-5 pb-5 text-gray-600">Yes! Most properties offer flexible payment plans. Greenstone Garden has 0-3 months, 4-6 months, and 7-12 months plans. Nova Ville offers outright, 6 months, and 12 months plans. Starcrest has flexible payment options available.</div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="faq-question p-5 flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <h3 class="font-bold text-lg">What is the initial deposit required?</h3>
+                    <span class="text-2xl text-gold">+</span>
+                </div>
+                <div class="faq-answer px-5 pb-5 text-gray-600">Initial deposits vary by property: Greenstone Garden: ₦500,000, Pistis Gardens: ₦100,000, Southern-Crest: ₦100,000, Nova Ville: ₦500,000, Starcrest: Contact us for details.</div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="faq-question p-5 flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <h3 class="font-bold text-lg">Are the properties verified and genuine?</h3>
+                    <span class="text-2xl text-gold">+</span>
+                </div>
+                <div class="faq-answer px-5 pb-5 text-gray-600">Yes! All properties are verified and come with proper documentation. Greenstone Garden has C of O File No: OW/PL/C642. Pistis Gardens has Registered Survey (C of O in view). Nova Ville has Registered Survey & Deed of Assignment (Freehold).</div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="faq-question p-5 flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <h3 class="font-bold text-lg">Can I inspect the property before buying?</h3>
+                    <span class="text-2xl text-gold">+</span>
+                </div>
+                <div class="faq-answer px-5 pb-5 text-gray-600">Absolutely! We encourage site inspections. Contact us via <a href="https://wa.me/2349071049271" class="text-gold font-semibold">WhatsApp</a> or call us to schedule a visit to any of our properties.</div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="faq-question p-5 flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <h3 class="font-bold text-lg">What is URRG?</h3>
+                    <span class="text-2xl text-gold">+</span>
+                </div>
+                <div class="faq-answer px-5 pb-5 text-gray-600">URRG stands for <strong>Unique Radiance Realtors Group</strong> - Africa's greatest real estate empire. Mikel Marvel Realty is a proud affiliate, providing us with access to verified properties and professional training.</div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="faq-question p-5 flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <h3 class="font-bold text-lg">How do I purchase a property?</h3>
+                    <span class="text-2xl text-gold">+</span>
+                </div>
+                <div class="faq-answer px-5 pb-5 text-gray-600">The process is simple: 1. Choose your preferred property, 2. Contact us via WhatsApp or phone, 3. Schedule a site inspection, 4. Make initial deposit to secure your plot, 5. Complete payment plan, 6. Receive your allocation and documentation.</div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div class="faq-question p-5 flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <h3 class="font-bold text-lg">Do you offer agro investment properties?</h3>
+                    <span class="text-2xl text-gold">+</span>
+                </div>
+                <div class="faq-answer px-5 pb-5 text-gray-600">Yes! Starcrest The Annex is our premier agro investment property. You can invest in plots with coconut trees (1-5 Plots), acre deals (1-5 Acres), hectare options (1-5 Hectares). Prices from ₦1M to ₦75M. ⚠️ Coconut sales close June 30th, 2026!</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-gold">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-black mb-4">Still Have Questions?</h2>
+        <p class="text-black/80 mb-6">We're here to help! Reach out to us anytime.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="https://wa.me/2349071049271" target="_blank" class="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-black/80 transition inline-flex items-center gap-2">💬 Chat on WhatsApp</a>
+            <a href="contact.html" class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] text-white pt-16 pb-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="index.html" class="flex flex-col mb-4">
+                    <span class="text-2xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
+                    <span class="text-xs text-gray-400 -mt-1">REALTY</span>
+                </a>
+                <p class="text-gray-400 text-sm mb-4">Your trusted real estate partner in Ogun State & Ibadan.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=61582573435554" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/michealnosiru" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://x.com/urrg_realtors?s=21" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="X">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://uniqueradiancerealtorsgroup.com/" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="URRG Website">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+                    <li><a href="properties.html" class="hover:text-gold transition">Properties</a></li>
+                    <li><a href="about.html" class="hover:text-gold transition">About</a></li>
+                    <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+                    <li><a href="faq.html" class="hover:text-gold transition">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Our Affiliation</h3>
+                <div class="flex flex-col items-start">
+                    <img src="https://i.imgur.com/gmLqLgS.png" alt="URRG Logo" class="h-12 w-auto mb-2">
+                    <p class="text-gray-400 text-sm">Proud member of <span class="text-gold font-semibold">Unique Radiance Realtors Group</span></p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contact</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li>📞 +234 907 104 9271</li>
+                    <li>✉️ marvelmikel5625@gmail.com</li>
+                    <li>📍 Ogun State, Nigeria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 Mikel Marvel Realty. All rights reserved.</p>
+            <p class="text-xs text-gray-600 mt-1">Proudly affiliated with <span class="text-gold">Unique Radiance Realtors Group (URRG)</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/2349071049271" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition hover:scale-110 duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</a>
+
+<script>
+    function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        const icon = element.querySelector('span:last-child');
+        if (answer.classList.contains('open')) {
+            answer.classList.remove('open');
+            icon.textContent = '+';
+        } else {
+            answer.classList.add('open');
+            icon.textContent = '−';
+        }
+    }
+</script>
+
+</body>
+</html>
