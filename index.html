@@ -32,6 +32,7 @@
                 <a href="properties.html" class="text-sm hover:text-gold transition">Properties</a>
                 <a href="about.html" class="text-sm hover:text-gold transition">About</a>
                 <a href="contact.html" class="text-sm hover:text-gold transition">Contact</a>
+                <a href="partners.html" class="text-sm hover:text-gold transition">Partners</a>
                 <a href="https://wa.me/2349071049271" target="_blank" class="bg-gold text-black px-5 py-1.5 rounded-full text-sm font-semibold">Book Inspection</a>
             </div>
         </div>
@@ -64,24 +65,29 @@
 <section class="py-8 bg-white shadow-xl -mt-8 relative z-20 mx-4 rounded-2xl">
     <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-4">
-            <select class="px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
-                <option>Property Type</option>
-                <option>Land</option>
-                <option>House</option>
-                <option>Apartment</option>
+            <select id="homeType" class="px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
+                <option value="all">Property Type</option>
+                <option value="Land">Land</option>
+                <option value="House">House</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Agro">Agro Investment</option>
             </select>
-            <select class="px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
-                <option>Location</option>
-                <option>Lagos</option>
-                <option>Abuja</option>
+            <select id="homeLocation" class="px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
+                <option value="all">Location</option>
+                <option value="Abeokuta">Abeokuta</option>
+                <option value="Ibadan">Ibadan</option>
+                <option value="Alabata">Alabata</option>
+                <option value="Ibefun">Ibefun</option>
             </select>
-            <select class="px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
-                <option>Price Range</option>
-                <option>₦0 - ₦100M</option>
-                <option>₦100M - ₦500M</option>
-                <option>₦500M+</option>
+            <select id="homePrice" class="px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
+                <option value="all">Price Range</option>
+                <option value="0-1000000">₦0 - ₦1M</option>
+                <option value="1000000-5000000">₦1M - ₦5M</option>
+                <option value="5000000-15000000">₦5M - ₦15M</option>
+                <option value="15000000-30000000">₦15M - ₦30M</option>
+                <option value="30000000+">₦30M+</option>
             </select>
-            <a href="properties.html" class="bg-gold text-black text-center py-3 rounded-lg font-semibold">Search</a>
+            <button onclick="searchProperties()" class="bg-gold text-black text-center py-3 rounded-lg font-semibold hover:bg-gold/90 transition">🔍 Search</button>
         </div>
     </div>
 </section>
@@ -94,44 +100,46 @@
             <h2 class="text-3xl md:text-4xl font-bold mt-2">Handpicked Properties For You</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
+            <!-- Property 1 -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
-                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600" class="w-full h-64 object-cover">
+                <img src="https://i.imgur.com/OuKu7sh.jpeg" class="w-full h-64 object-cover">
                 <div class="p-5">
-                    <div class="text-2xl font-bold text-gold">₦850,000,000</div>
-                    <h3 class="font-bold text-xl mt-2">Luxury 5-Bedroom Mansion</h3>
-                    <p class="text-gray-500 mt-1">Banana Island, Lagos</p>
-                    <div class="flex items-center gap-4 mt-3 text-gray-500 text-sm">
-                        <span>🛏️ 5 beds</span>
-                        <span>🛁 6 baths</span>
-                        <span>📐 750 sqm</span>
+                    <div class="text-2xl font-bold text-gold">₦2,500,000</div>
+                    <h3 class="font-bold text-xl mt-2">Greenstone Garden - 300sqm</h3>
+                    <p class="text-gray-500 mt-1">📍 Kobape, Abeokuta</p>
+                    <div class="flex items-center gap-2 mt-3 text-gray-500 text-sm">
+                        <span>📐 300 sqm</span>
+                        <span class="text-xs bg-gold/20 px-2 py-1 rounded">Lifescape Global</span>
                     </div>
-                    <a href="https://wa.me/2349071049271?text=I'm%20interested%20in%20Luxury%205-Bedroom%20Mansion" target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg mt-4">Inquire on WhatsApp</a>
+                    <a href="https://wa.me/2349071049271?text=I'm%20interested%20in%20Greenstone%20Garden%20-%20300sqm" target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg mt-4">Inquire on WhatsApp</a>
                 </div>
             </div>
+            <!-- Property 2 -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600" class="w-full h-64 object-cover">
+                <img src="https://i.imgur.com/mT8mXzp.jpeg" class="w-full h-64 object-cover">
                 <div class="p-5">
-                    <div class="text-2xl font-bold text-gold">₦350,000,000</div>
-                    <h3 class="font-bold text-xl mt-2">Prime Commercial Land</h3>
-                    <p class="text-gray-500 mt-1">Victoria Island, Lagos</p>
-                    <div class="flex items-center gap-4 mt-3 text-gray-500 text-sm">
-                        <span>📐 1500 sqm</span>
+                    <div class="text-2xl font-bold text-gold">₦4,000,000</div>
+                    <h3 class="font-bold text-xl mt-2">Greenstone Garden - 600sqm</h3>
+                    <p class="text-gray-500 mt-1">📍 Kobape, Abeokuta</p>
+                    <div class="flex items-center gap-2 mt-3 text-gray-500 text-sm">
+                        <span>📐 600 sqm</span>
+                        <span class="text-xs bg-gold/20 px-2 py-1 rounded">Lifescape Global</span>
                     </div>
-                    <a href="https://wa.me/2349071049271?text=I'm%20interested%20in%20Prime%20Commercial%20Land" target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg mt-4">Inquire on WhatsApp</a>
+                    <a href="https://wa.me/2349071049271?text=I'm%20interested%20in%20Greenstone%20Garden%20-%20600sqm" target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg mt-4">Inquire on WhatsApp</a>
                 </div>
             </div>
+            <!-- Property 3 -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600" class="w-full h-64 object-cover">
+                <img src="https://i.imgur.com/8dDKQRZ.jpeg" class="w-full h-64 object-cover">
                 <div class="p-5">
-                    <div class="text-2xl font-bold text-gold">₦120,000,000</div>
-                    <h3 class="font-bold text-xl mt-2">Modern 3-Bedroom Apartment</h3>
-                    <p class="text-gray-500 mt-1">Maitama, Abuja</p>
-                    <div class="flex items-center gap-4 mt-3 text-gray-500 text-sm">
-                        <span>🛏️ 3 beds</span>
-                        <span>🛁 3 baths</span>
-                        <span>📐 180 sqm</span>
+                    <div class="text-2xl font-bold text-gold">₦24,000,000</div>
+                    <h3 class="font-bold text-xl mt-2">Greenstone - 6 Plots</h3>
+                    <p class="text-gray-500 mt-1">📍 Kobape, Abeokuta</p>
+                    <div class="flex items-center gap-2 mt-3 text-gray-500 text-sm">
+                        <span>📐 2500 sqm</span>
+                        <span class="text-xs bg-gold/20 px-2 py-1 rounded">Lifescape Global</span>
                     </div>
-                    <a href="https://wa.me/2349071049271?text=I'm%20interested%20in%20Modern%203-Bedroom%20Apartment" target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg mt-4">Inquire on WhatsApp</a>
+                    <a href="https://wa.me/2349071049271?text=I'm%20interested%20in%20Greenstone%20-%206%20Plots" target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg mt-4">Inquire on WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -225,7 +233,7 @@
     </div>
 </section>
 
-<!-- Footer - Modern 2026 -->
+<!-- Footer with URRG Logo -->
 <footer class="bg-[#0A0A0A] text-white pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 mb-12">
@@ -235,7 +243,7 @@
                     <span class="text-2xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
                     <span class="text-xs text-gray-400 -mt-1">REALTY</span>
                 </a>
-                <p class="text-gray-400 text-sm mb-4">Your trusted real estate partner in Nigeria. We help you discover genuine and affordable properties.</p>
+                <p class="text-gray-400 text-sm mb-4">Your trusted real estate partner in Ogun State.</p>
                 <div class="flex space-x-4">
                     <a href="#" class="text-gray-400 hover:text-gold transition text-xl">📘</a>
                     <a href="#" class="text-gray-400 hover:text-gold transition text-xl">📸</a>
@@ -250,66 +258,37 @@
                 <ul class="space-y-2 text-gray-400 text-sm">
                     <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
                     <li><a href="properties.html" class="hover:text-gold transition">Properties</a></li>
-                    <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+                    <li><a href="about.html" class="hover:text-gold transition">About</a></li>
                     <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+                    <li><a href="partners.html" class="hover:text-gold transition">Partners</a></li>
                 </ul>
             </div>
             
-            <!-- Services Links -->
+            <!-- URRG Affiliation -->
             <div>
-                <h3 class="text-lg font-bold mb-4">Our Services</h3>
-                <ul class="space-y-2 text-gray-400 text-sm">
-                    <li><a href="#" class="hover:text-gold transition">Property Sales</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Land Acquisition</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Property Management</a></li>
-                    <li><a href="#" class="hover:text-gold transition">Legal Support</a></li>
-                </ul>
+                <h3 class="text-lg font-bold mb-4">Our Affiliation</h3>
+                <div class="flex flex-col items-start">
+                    <img src="https://i.imgur.com/gmLqLgS.png" alt="URRG Logo" class="h-12 w-auto mb-2">
+                    <p class="text-gray-400 text-sm">Proud member of <span class="text-gold font-semibold">Unique Radiance Realtors Group</span></p>
+                    <p class="text-gray-500 text-xs mt-2">Africa's greatest real estate empire</p>
+                </div>
             </div>
             
             <!-- Contact Info -->
             <div>
                 <h3 class="text-lg font-bold mb-4">Get in Touch</h3>
-                <ul class="space-y-3 text-gray-400 text-sm">
-                    <li class="flex items-center gap-3">
-                        <span>📍</span>
-                        <span>Lagos, Nigeria</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <span>📞</span>
-                        <a href="tel:+2349071049271" class="hover:text-gold transition">+234 907 104 9271</a>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <span>✉️</span>
-                        <a href="mailto:marvelmikel5625@gmail.com" class="hover:text-gold transition">marvelmikel5625@gmail.com</a>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <span>💬</span>
-                        <a href="https://wa.me/2349071049271" target="_blank" class="hover:text-gold transition">Chat on WhatsApp</a>
-                    </li>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li>📞 +234 907 104 9271</li>
+                    <li>✉️ marvelmikel5625@gmail.com</li>
+                    <li>📍 Ogun State, Nigeria</li>
                 </ul>
-            </div>
-        </div>
-        
-        <!-- Newsletter Section -->
-        <div class="border-t border-gray-800 pt-8 mb-8">
-            <div class="max-w-xl mx-auto text-center">
-                <h3 class="text-lg font-bold mb-2">Subscribe to Our Newsletter</h3>
-                <p class="text-gray-400 text-sm mb-4">Get the latest property listings and real estate news.</p>
-                <div class="flex flex-wrap gap-2">
-                    <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-gold">
-                    <button class="bg-gold text-black px-6 py-2 rounded-lg font-semibold hover:bg-gold/90 transition">Subscribe</button>
-                </div>
             </div>
         </div>
         
         <!-- Bottom Bar -->
         <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
             <p>&copy; 2026 Mikel Marvel Realty. All rights reserved.</p>
-            <div class="flex justify-center gap-4 mt-2">
-                <a href="#" class="hover:text-gold transition">Privacy Policy</a>
-                <a href="#" class="hover:text-gold transition">Terms of Use</a>
-                <a href="#" class="hover:text-gold transition">Cookie Policy</a>
-            </div>
+            <p class="text-xs text-gray-600 mt-1">Proudly affiliated with <span class="text-gold">Unique Radiance Realtors Group (URRG)</span></p>
         </div>
     </div>
 </footer>
@@ -328,6 +307,22 @@
         animation: bounce 2s infinite;
     }
 </style>
+
+<script>
+    function searchProperties() {
+        const type = document.getElementById('homeType').value;
+        const location = document.getElementById('homeLocation').value;
+        const price = document.getElementById('homePrice').value;
+        
+        let url = 'properties.html?';
+        
+        if (type !== 'all') url += `type=${type}&`;
+        if (location !== 'all') url += `location=${location}&`;
+        if (price !== 'all') url += `price=${price}&`;
+        
+        window.location.href = url;
+    }
+</script>
 
 </body>
 </html>
