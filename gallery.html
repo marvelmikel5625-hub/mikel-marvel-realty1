@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Mikel Marvel Realty</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAF8F5; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        .bg-gold { background-color: #C6A55C; }
+        .text-gold { color: #C6A55C; }
+        .bg-charcoal { background-color: #1A1A1A; }
+        .gallery-img { transition: all 0.3s ease; cursor: pointer; }
+        .gallery-img:hover { transform: scale(1.05); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="bg-[#0D0D0D] text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
+                <span class="text-[10px] text-gray-400 -mt-1">REALTY</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-sm hover:text-gold transition">Home</a>
+                <a href="properties.html" class="text-sm hover:text-gold transition">Properties</a>
+                <a href="about.html" class="text-sm hover:text-gold transition">About</a>
+                <a href="contact.html" class="text-sm hover:text-gold transition">Contact</a>
+                <a href="partners.html" class="text-sm hover:text-gold transition">Partners</a>
+                <a href="faq.html" class="text-sm hover:text-gold transition">FAQ</a>
+                <a href="gallery.html" class="text-sm text-gold transition">Gallery</a>
+                <a href="https://wa.me/2349071049271" target="_blank" class="bg-gold text-black px-5 py-1.5 rounded-full text-sm font-semibold">Book Inspection</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="bg-charcoal text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
+        <p class="text-gray-300 text-lg">Explore our properties through real images and videos</p>
+    </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-3 justify-center mb-12">
+            <button onclick="filterGallery('all')" class="px-6 py-2 bg-gold text-black rounded-full font-semibold hover:bg-gold/80 transition" id="filterAll">All</button>
+            <button onclick="filterGallery('greenstone')" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-300 transition" id="filterGreenstone">Greenstone Garden</button>
+            <button onclick="filterGallery('pistis')" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-300 transition" id="filterPistis">Pistis Gardens</button>
+            <button onclick="filterGallery('starcrest')" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-300 transition" id="filterStarcrest">Starcrest The Annex</button>
+            <button onclick="filterGallery('nova')" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-300 transition" id="filterNova">Nova Ville</button>
+        </div>
+        
+        <!-- Gallery Grid -->
+        <div id="galleryGrid" class="grid md:grid-cols-3 gap-6">
+            <!-- Images will be loaded here -->
+        </div>
+        
+        <!-- No Results -->
+        <div id="noGalleryResults" class="text-center py-12 hidden">
+            <p class="text-gray-500 text-lg">No images found for this category.</p>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] text-white pt-16 pb-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="index.html" class="flex flex-col mb-4">
+                    <span class="text-2xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
+                    <span class="text-xs text-gray-400 -mt-1">REALTY</span>
+                </a>
+                <p class="text-gray-400 text-sm mb-4">Your trusted real estate partner in Ogun State & Ibadan.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=61582573435554" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/michealnosiru" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://x.com/urrg_realtors?s=21" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="X">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://uniqueradiancerealtorsgroup.com/" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="URRG Website">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+                    <li><a href="properties.html" class="hover:text-gold transition">Properties</a></li>
+                    <li><a href="about.html" class="hover:text-gold transition">About</a></li>
+                    <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+                    <li><a href="faq.html" class="hover:text-gold transition">FAQ</a></li>
+                    <li><a href="gallery.html" class="hover:text-gold transition">Gallery</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Our Affiliation</h3>
+                <div class="flex flex-col items-start">
+                    <img src="https://i.imgur.com/gmLqLgS.png" alt="URRG Logo" class="h-12 w-auto mb-2">
+                    <p class="text-gray-400 text-sm">Proud member of <span class="text-gold font-semibold">Unique Radiance Realtors Group</span></p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contact</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li>📞 +234 907 104 9271</li>
+                    <li>✉️ marvelmikel5625@gmail.com</li>
+                    <li>📍 Ogun State, Nigeria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 Mikel Marvel Realty. All rights reserved.</p>
+            <p class="text-xs text-gray-600 mt-1">Proudly affiliated with <span class="text-gold">Unique Radiance Realtors Group (URRG)</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/2349071049271" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition hover:scale-110 duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</a>
+
+<script>
+    const galleryImages = [
+        // Greenstone Garden
+        { id: 1, category: 'greenstone', title: 'Greenstone Garden - Entrance', image: 'https://i.imgur.com/OuKu7sh.jpeg' },
+        { id: 2, category: 'greenstone', title: 'Greenstone Garden - Landscape', image: 'https://i.imgur.com/mT8mXzp.jpeg' },
+        { id: 3, category: 'greenstone', title: 'Greenstone Garden - Aerial View', image: 'https://i.imgur.com/8dDKQRZ.jpeg' },
+        { id: 4, category: 'greenstone', title: 'Greenstone Garden - Green Environment', image: 'https://i.imgur.com/q4K6p6L.jpeg' },
+        
+        // Pistis Gardens
+        { id: 5, category: 'pistis', title: 'Pistis Gardens - Estate View', image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600' },
+        { id: 6, category: 'pistis', title: 'Pistis Gardens - Secure Environment', image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600' },
+        { id: 7, category: 'pistis', title: 'Pistis Gardens - Residential Layout', image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600' },
+        
+        // Starcrest The Annex
+        { id: 8, category: 'starcrest', title: 'Starcrest - Agro Investment', image: 'https://i.imgur.com/G8JS2Sp.jpeg' },
+        { id: 9, category: 'starcrest', title: 'Starcrest - Site Development', image: 'https://i.imgur.com/fwYlcrs.jpeg' },
+        { id: 10, category: 'starcrest', title: 'Starcrest - Coconut Plantation', image: 'https://i.imgur.com/Y9TVhkP.jpeg' },
+        { id: 11, category: 'starcrest', title: 'Starcrest - Farm Workers Lodge', image: 'https://i.imgur.com/qY83pQD.jpeg' },
+        { id: 12, category: 'starcrest', title: 'Starcrest - Land Clearing', image: 'https://i.imgur.com/nUAYVYR.jpeg' },
+        
+        // Nova Ville
+        { id: 13, category: 'nova', title: 'Nova Ville - Estate Entrance', image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600' },
+        { id: 14, category: 'nova', title: 'Nova Ville - Dry Land', image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600' },
+        { id: 15, category: 'nova', title: 'Nova Ville - Development Area', image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600' }
+    ];
+
+    let currentFilter = 'all';
+
+    function renderGallery(filter) {
+        const grid = document.getElementById('galleryGrid');
+        const noResults = document.getElementById('noGalleryResults');
+        
+        const filtered = filter === 'all' ? galleryImages : galleryImages.filter(img => img.category === filter);
+        
+        if (filtered.length === 0) {
+            grid.innerHTML = '';
+            noResults.classList.remove('hidden');
+            return;
+        }
+        
+        noResults.classList.add('hidden');
+        grid.innerHTML = filtered.map(img => `
+            <div class="gallery-img rounded-2xl overflow-hidden shadow-lg bg-white" data-category="${img.category}">
+                <img src="${img.image}" alt="${img.title}" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-center">${img.title}</h3>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function filterGallery(category) {
+        currentFilter = category;
+        
+        // Update button styles
+        document.querySelectorAll('#filterAll, #filterGreenstone, #filterPistis, #filterStarcrest, #filterNova').forEach(btn => {
+            btn.classList.remove('bg-gold', 'text-black');
+            btn.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        
+        const btnMap = {
+            'all': 'filterAll',
+            'greenstone': 'filterGreenstone',
+            'pistis': 'filterPistis',
+            'starcrest': 'filterStarcrest',
+            'nova': 'filterNova'
+        };
+        
+        const activeBtn = document.getElementById(btnMap[category]);
+        if (activeBtn) {
+            activeBtn.classList.remove('bg-gray-200', 'text-gray-700');
+            activeBtn.classList.add('bg-gold', 'text-black');
+        }
+        
+        renderGallery(category);
+    }
+
+    // Initial render
+    renderGallery('all');
+</script>
+
+</body>
+</html>
