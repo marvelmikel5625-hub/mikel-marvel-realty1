@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Mikel Marvel Realty</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAF8F5; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        .bg-gold { background-color: #C6A55C; }
+        .text-gold { color: #C6A55C; }
+        .bg-charcoal { background-color: #1A1A1A; }
+        .blog-card { transition: all 0.3s ease; cursor: pointer; }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .blog-card:hover .blog-image { transform: scale(1.05); }
+        .blog-image { transition: all 0.5s ease; }
+        .category-badge { transition: all 0.3s ease; }
+        .category-badge:hover { background-color: #C6A55C; color: #1A1A1A; }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="bg-[#0D0D0D] text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
+                <span class="text-[10px] text-gray-400 -mt-1">REALTY</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-sm hover:text-gold transition">Home</a>
+                <a href="properties.html" class="text-sm hover:text-gold transition">Properties</a>
+                <a href="about.html" class="text-sm hover:text-gold transition">About</a>
+                <a href="contact.html" class="text-sm hover:text-gold transition">Contact</a>
+                <a href="partners.html" class="text-sm hover:text-gold transition">Partners</a>
+                <a href="faq.html" class="text-sm hover:text-gold transition">FAQ</a>
+                <a href="gallery.html" class="text-sm hover:text-gold transition">Gallery</a>
+                <a href="blog.html" class="text-sm text-gold transition">Blog</a>
+                <a href="https://wa.me/2349071049271" target="_blank" class="bg-gold text-black px-5 py-1.5 rounded-full text-sm font-semibold">Book Inspection</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="bg-charcoal text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Blog</h1>
+        <p class="text-gray-300 text-lg">Insights, tips, and updates on real estate in Nigeria</p>
+    </div>
+</section>
+
+<!-- Blog Grid -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-3 justify-center mb-12">
+            <button onclick="filterBlog('all')" class="category-badge px-6 py-2 bg-gold text-black rounded-full font-semibold transition" id="blogAll">All Posts</button>
+            <button onclick="filterBlog('investment')" class="category-badge px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold transition" id="blogInvestment">Investment</button>
+            <button onclick="filterBlog('land')" class="category-badge px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold transition" id="blogLand">Land & Property</button>
+            <button onclick="filterBlog('tips')" class="category-badge px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold transition" id="blogTips">Buying Tips</button>
+            <button onclick="filterBlog('news')" class="category-badge px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold transition" id="blogNews">Market News</button>
+        </div>
+        
+        <!-- Blog Grid -->
+        <div id="blogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog posts loaded here -->
+        </div>
+        
+        <!-- No Results -->
+        <div id="noBlogResults" class="text-center py-12 hidden">
+            <p class="text-gray-500 text-lg">No blog posts found in this category.</p>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-16 bg-gold">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-black mb-4">Subscribe to Our Newsletter</h2>
+        <p class="text-black/80 mb-6">Get the latest property updates and real estate tips delivered to your inbox.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <input type="email" placeholder="Enter your email" class="px-6 py-3 rounded-full flex-1 max-w-md focus:outline-none focus:ring-2 focus:ring-black">
+            <button class="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-black/80 transition">Subscribe</button>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] text-white pt-16 pb-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="index.html" class="flex flex-col mb-4">
+                    <span class="text-2xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
+                    <span class="text-xs text-gray-400 -mt-1">REALTY</span>
+                </a>
+                <p class="text-gray-400 text-sm mb-4">Your trusted real estate partner in Ogun State & Ibadan.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=61582573435554" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/michealnosiru" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://x.com/urrg_realtors?s=21" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="X">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://uniqueradiancerealtorsgroup.com/" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="URRG Website">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+                    <li><a href="properties.html" class="hover:text-gold transition">Properties</a></li>
+                    <li><a href="about.html" class="hover:text-gold transition">About</a></li>
+                    <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+                    <li><a href="faq.html" class="hover:text-gold transition">FAQ</a></li>
+                    <li><a href="gallery.html" class="hover:text-gold transition">Gallery</a></li>
+                    <li><a href="blog.html" class="hover:text-gold transition">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Our Affiliation</h3>
+                <div class="flex flex-col items-start">
+                    <img src="https://i.imgur.com/gmLqLgS.png" alt="URRG Logo" class="h-12 w-auto mb-2">
+                    <p class="text-gray-400 text-sm">Proud member of <span class="text-gold font-semibold">Unique Radiance Realtors Group</span></p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contact</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li>📞 +234 907 104 9271</li>
+                    <li>✉️ marvelmikel5625@gmail.com</li>
+                    <li>📍 Ogun State, Nigeria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 Mikel Marvel Realty. All rights reserved.</p>
+            <p class="text-xs text-gray-600 mt-1">Proudly affiliated with <span class="text-gold">Unique Radiance Realtors Group (URRG)</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/2349071049271" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition hover:scale-110 duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</a>
+
+<script>
+    const blogPosts = [
+        {
+            id: 1,
+            title: 'Why Invest in Ogun State Real Estate in 2026?',
+            category: 'investment',
+            excerpt: 'Discover the booming real estate market in Ogun State and why it\'s the best investment destination in Nigeria right now.',
+            image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600',
+            date: 'June 15, 2026',
+            readTime: '5 min read',
+            author: 'Mikel Marvel'
+        },
+        {
+            id: 2,
+            title: '5 Things to Check Before Buying Land',
+            category: 'land',
+            excerpt: 'Essential tips for land buyers: title verification, survey plans, physical inspection, and more.',
+            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600',
+            date: 'June 12, 2026',
+            readTime: '4 min read',
+            author: 'Mikel Marvel'
+        },
+        {
+            id: 3,
+            title: 'Coconut Farming: A Lucrative Investment Opportunity',
+            category: 'investment',
+            excerpt: 'Learn why agro-investment with Starcrest The Annex is one of the smartest investment moves in 2026.',
+            image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600',
+            date: 'June 10, 2026',
+            readTime: '6 min read',
+            author: 'Mikel Marvel'
+        },
+        {
+            id: 4,
+            title: 'How to Secure Your Property Title in Nigeria',
+            category: 'tips',
+            excerpt: 'A step-by-step guide to ensuring your property title is authentic and properly documented.',
+            image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600',
+            date: 'June 8, 2026',
+            readTime: '7 min read',
+            author: 'Mikel Marvel'
+        },
+        {
+            id: 5,
+            title: 'Ogun State: The Next Real Estate Hub',
+            category: 'news',
+            excerpt: 'With new infrastructure and development, Ogun State is becoming the preferred destination for investors.',
+            image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600',
+            date: 'June 5, 2026',
+            readTime: '5 min read',
+            author: 'Mikel Marvel'
+        },
+        {
+            id: 6,
+            title: 'Why Choose Gated Estates for Your Home',
+            category: 'tips',
+            excerpt: 'The benefits of living in gated estates: security, community, amenities, and property value.',
+            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600',
+            date: 'June 3, 2026',
+            readTime: '4 min read',
+            author: 'Mikel Marvel'
+        }
+    ];
+
+    let currentFilter = 'all';
+
+    function renderBlog(filter) {
+        const grid = document.getElementById('blogGrid');
+        const noResults = document.getElementById('noBlogResults');
+        
+        const filtered = filter === 'all' ? blogPosts : blogPosts.filter(post => post.category === filter);
+        
+        if (filtered.length === 0) {
+            grid.innerHTML = '';
+            noResults.classList.remove('hidden');
+            return;
+        }
+        
+        noResults.classList.add('hidden');
+        grid.innerHTML = filtered.map(post => `
+            <div class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg" onclick="window.location.href='blog-detail.html?id=${post.id}'">
+                <div class="overflow-hidden h-48">
+                    <img src="${post.image}" alt="${post.title}" class="blog-image w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-xs bg-gold/20 px-3 py-1 rounded-full font-semibold">${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
+                        <span class="text-xs text-gray-400">${post.date}</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 hover:text-gold transition">${post.title}</h3>
+                    <p class="text-gray-500 text-sm mb-4 line-clamp-2">${post.excerpt}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-gray-400">By ${post.author}</span>
+                        <span class="text-xs text-gray-400">${post.readTime}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function filterBlog(category) {
+        currentFilter = category;
+        
+        // Update button styles
+        document.querySelectorAll('.category-badge').forEach(btn => {
+            btn.classList.remove('bg-gold', 'text-black');
+            btn.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        
+        const btnMap = {
+            'all': 'blogAll',
+            'investment': 'blogInvestment',
+            'land': 'blogLand',
+            'tips': 'blogTips',
+            'news': 'blogNews'
+        };
+        
+        const activeBtn = document.getElementById(btnMap[category]);
+        if (activeBtn) {
+            activeBtn.classList.remove('bg-gray-200', 'text-gray-700');
+            activeBtn.classList.add('bg-gold', 'text-black');
+        }
+        
+        renderBlog(category);
+    }
+
+    // Initial render
+    renderBlog('all');
+</script>
+
+</body>
+</html>
