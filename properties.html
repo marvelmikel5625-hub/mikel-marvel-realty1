@@ -35,6 +35,8 @@
                 <a href="contact.html" class="text-sm hover:text-gold transition">Contact</a>
                 <a href="partners.html" class="text-sm hover:text-gold transition">Partners</a>
                 <a href="faq.html" class="text-sm hover:text-gold transition">FAQ</a>
+                <a href="gallery.html" class="text-sm hover:text-gold transition">Gallery</a>
+                <a href="blog.html" class="text-sm hover:text-gold transition">Blog</a>
                 <a href="https://wa.me/2349071049271" target="_blank" class="bg-gold text-black px-5 py-1.5 rounded-full text-sm font-semibold">Book Inspection</a>
             </div>
         </div>
@@ -127,6 +129,8 @@
                     <li><a href="about.html" class="hover:text-gold transition">About</a></li>
                     <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
                     <li><a href="faq.html" class="hover:text-gold transition">FAQ</a></li>
+                    <li><a href="gallery.html" class="hover:text-gold transition">Gallery</a></li>
+                    <li><a href="blog.html" class="hover:text-gold transition">Blog</a></li>
                 </ul>
             </div>
             <div>
@@ -159,30 +163,30 @@
 
 <script>
     const properties = [
-        // GREENSTONE GARDEN - Kobape
+        // GREENSTONE GARDEN - Kobape (3 properties)
         { id: 1, title: 'Greenstone Garden - 300sqm', location: 'Kobape, Abeokuta', price: 2500000, type: 'Land', sqm: 300, image: 'https://i.imgur.com/OuKu7sh.jpeg', status: 'available', deposit: '₦500,000', features: 'Smart Garden Security, Greenery, Central Water System, C of O File No: OW/PL/C642', developer: 'Lifescape Global' },
         { id: 2, title: 'Greenstone Garden - 600sqm', location: 'Kobape, Abeokuta', price: 4000000, type: 'Land', sqm: 600, image: 'https://i.imgur.com/mT8mXzp.jpeg', status: 'available', deposit: '₦500,000', features: 'Smart Garden Security, Greenery, Central Water System, C of O File No: OW/PL/C642', developer: 'Lifescape Global' },
         { id: 3, title: 'Greenstone Garden - 6 Plots (Acre Deal)', location: 'Kobape, Abeokuta', price: 24000000, type: 'Land', sqm: 2500, image: 'https://i.imgur.com/8dDKQRZ.jpeg', status: 'available', deposit: '₦2,500,000', features: '6 Plots, Flexible 12-month payment plan', developer: 'Lifescape Global' },
         
-        // PISTIS GARDENS - Ibadan
+        // PISTIS GARDENS - Ibadan (4 properties)
         { id: 4, title: 'Pistis Gardens - 150sqm', location: 'Kila, Apata Ibadan, Oyo', price: 500000, type: 'Land', sqm: 150, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦100,000', features: 'Gated Estate, 24/7 Security, Perimeter Fencing, Good Road Network, C of O in view', developer: 'Luminous Hills' },
         { id: 5, title: 'Pistis Gardens - 300sqm', location: 'Kila, Apata Ibadan, Oyo', price: 1000000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦100,000', features: 'Gated Estate, 24/7 Security, Perimeter Fencing, Good Road Network, C of O in view', developer: 'Luminous Hills' },
         { id: 6, title: 'Pistis Gardens - 450sqm', location: 'Kila, Apata Ibadan, Oyo', price: 1200000, type: 'Land', sqm: 450, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦100,000', features: 'Gated Estate, 24/7 Security, Perimeter Fencing, Good Road Network, C of O in view', developer: 'Luminous Hills' },
         { id: 7, title: 'Pistis Gardens - 600sqm', location: 'Kila, Apata Ibadan, Oyo', price: 1500000, type: 'Land', sqm: 600, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦100,000', features: 'Gated Estate, 24/7 Security, Perimeter Fencing, Good Road Network, C of O in view', developer: 'Luminous Hills' },
         
-        // SOUTHERN-CREST - Ibadan
+        // SOUTHERN-CREST - Ibadan (3 properties)
         { id: 8, title: 'Southern-Crest - 300sqm', location: 'Omi-Adio, Apata Ibadan, Oyo', price: 1000000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦100,000', features: 'Premium estate with good road network', developer: 'Luminous Hills' },
         { id: 9, title: 'Southern-Crest - 450sqm', location: 'Omi-Adio, Apata Ibadan, Oyo', price: 1125000, type: 'Land', sqm: 450, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦100,000', features: 'Premium estate with good road network', developer: 'Luminous Hills' },
         { id: 10, title: 'Southern-Crest - 600sqm', location: 'Omi-Adio, Apata Ibadan, Oyo', price: 1500000, type: 'Land', sqm: 600, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦100,000', features: 'Premium estate with good road network', developer: 'Luminous Hills' },
         
-        // NOVA VILLE - Ibefun
+        // NOVA VILLE - Ibefun (2 properties)
         { id: 11, title: 'Nova Ville - 300sqm', location: 'Ibefun, Ogun State', price: 4000000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦500,000', features: '100% dry land, Registered Survey & Deed of Assignment, Freehold', developer: 'Square Metres' },
         { id: 12, title: 'Nova Ville - 500sqm', location: 'Ibefun, Ogun State', price: 4500000, type: 'Land', sqm: 500, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦500,000', features: '100% dry land, Registered Survey & Deed of Assignment, Freehold', developer: 'Square Metres' },
         
-        // STARCREST THE ANNEX - Alabata
-        { id: 13, title: 'Starcrest - 1 Plot (Agro)', location: 'Alabata, FUNAAB Axis', price: 1000000, type: 'Agro', sqm: 500, image: 'https://i.imgur.com/G8JS2Sp.jpeg', status: 'available', deposit: 'Contact Us', features: '10 Coconut trees, Site clearing ongoing', developer: 'Astracrest Investment Limited' },
+        // STARCREST THE ANNEX - Alabata (10 properties)
+        { id: 13, title: 'Starcrest - 1 Plot (Agro)', location: 'Alabata, FUNAAB Axis', price: 1000000, type: 'Agro', sqm: 500, image: 'https://i.imgur.com/G8JS2Sp.jpeg', status: 'sold', deposit: 'SOLD ✅', features: '10 Coconut trees - SOLD by Sikirullah! 🎉', developer: 'Astracrest Investment Limited', soldBy: 'Sikirullah Abdulrasheed' },
         { id: 14, title: 'Starcrest - 2 Plots', location: 'Alabata, FUNAAB Axis', price: 2000000, type: 'Agro', sqm: 1000, image: 'https://i.imgur.com/fwYlcrs.jpeg', status: 'available', deposit: 'Contact Us', features: '20 Coconut trees', developer: 'Astracrest Investment Limited' },
-        { id: 15, title: 'Starcrest - 3 Plots', location: 'Alabata, FUNAAB Axis', price: 3000000, type: 'Agro', sqm: 1500, image: 'https://i.imgur.com/Y9TVhkP.jpeg', status: 'sold', deposit: 'SOLD', features: '30 Coconut trees - SOLD OUT', developer: 'Astracrest Investment Limited' },
+        { id: 15, title: 'Starcrest - 3 Plots', location: 'Alabata, FUNAAB Axis', price: 3000000, type: 'Agro', sqm: 1500, image: 'https://i.imgur.com/Y9TVhkP.jpeg', status: 'sold', deposit: 'SOLD ✅', features: '30 Coconut trees - SOLD by Chinaka! 🎉', developer: 'Astracrest Investment Limited', soldBy: 'Chinaka Amarachi Favourite' },
         { id: 16, title: 'Starcrest - 1 Acre (Agro)', location: 'Alabata, FUNAAB Axis', price: 6000000, type: 'Agro', sqm: 4047, image: 'https://i.imgur.com/qY83pQD.jpeg', status: 'available', deposit: 'Contact Us', features: '60 Coconut trees, Farm workers lodge under construction', developer: 'Astracrest Investment Limited' },
         { id: 17, title: 'Starcrest - 2 Acres', location: 'Alabata, FUNAAB Axis', price: 12000000, type: 'Agro', sqm: 8094, image: 'https://i.imgur.com/nUAYVYR.jpeg', status: 'available', deposit: 'Contact Us', features: '120 Coconut trees', developer: 'Astracrest Investment Limited' },
         { id: 18, title: 'Starcrest - 3 Acres', location: 'Alabata, FUNAAB Axis', price: 18000000, type: 'Agro', sqm: 12140, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: 'Contact Us', features: '18 Plots, 180 Coconut trees', developer: 'Astracrest Investment Limited' },
@@ -234,6 +238,11 @@
                     <div class="absolute top-4 right-4 ${prop.status === 'available' ? 'bg-green-500' : 'bg-red-500'} text-white px-2 py-1 rounded text-xs font-semibold">
                         ${prop.status === 'available' ? 'Available' : 'SOLD'}
                     </div>
+                    ${prop.status === 'sold' && prop.soldBy ? `
+                    <div class="absolute bottom-4 left-4 bg-black/70 text-white px-2 py-1 rounded text-xs">
+                        Sold by: ${prop.soldBy}
+                    </div>
+                    ` : ''}
                 </div>
                 <div class="p-5">
                     <div class="text-2xl font-bold text-gold mb-2">${formatPrice(prop.price)}</div>
