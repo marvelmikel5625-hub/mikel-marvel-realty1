@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Mikel Marvel Realty</title>
+    <title>Blog Post - Mikel Marvel Realty</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,12 +14,12 @@
         .bg-gold { background-color: #C6A55C; }
         .text-gold { color: #C6A55C; }
         .bg-charcoal { background-color: #1A1A1A; }
-        .blog-card { transition: all 0.3s ease; cursor: pointer; }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .blog-card:hover .blog-image { transform: scale(1.05); }
-        .blog-image { transition: all 0.5s ease; }
-        .category-badge { transition: all 0.3s ease; }
-        .category-badge:hover { background-color: #C6A55C; color: #1A1A1A; }
+        .blog-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #4B5563; }
+        .blog-content h2 { font-size: 1.8rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1A1A1A; }
+        .blog-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; color: #4B5563; }
+        .blog-content ul li { list-style-type: disc; margin-bottom: 0.5rem; }
+        .blog-content blockquote { border-left: 4px solid #C6A55C; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #4B5563; }
+        .blog-content img { border-radius: 0.75rem; margin: 1.5rem 0; max-width: 100%; }
     </style>
 </head>
 <body>
@@ -40,61 +40,39 @@
                 <a href="partners.html" class="text-sm hover:text-gold transition">Partners</a>
                 <a href="faq.html" class="text-sm hover:text-gold transition">FAQ</a>
                 <a href="gallery.html" class="text-sm hover:text-gold transition">Gallery</a>
-                <a href="blog.html" class="text-sm text-gold transition">Blog</a>
+                <a href="blog.html" class="text-sm hover:text-gold transition">Blog</a>
                 <a href="https://wa.me/2349071049271" target="_blank" class="bg-gold text-black px-5 py-1.5 rounded-full text-sm font-semibold">Book Inspection</a>
             </div>
         </div>
     </div>
 </nav>
 
-<!-- Page Header -->
-<section class="bg-charcoal text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Blog</h1>
-        <p class="text-gray-300 text-lg">Insights, tips, and updates on real estate in Nigeria</p>
-    </div>
-</section>
-
-<!-- Blog Grid -->
+<!-- Blog Content -->
 <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4">
-        
-        <!-- Category Filters -->
-        <div class="flex flex-wrap gap-3 justify-center mb-12">
-            <button onclick="filterBlog('all')" class="category-badge px-6 py-2 bg-gold text-black rounded-full font-semibold transition" id="blogAll">All Posts</button>
-            <button onclick="filterBlog('investment')" class="category-badge px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold transition" id="blogInvestment">Investment</button>
-            <button onclick="filterBlog('land')" class="category-badge px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold transition" id="blogLand">Land & Property</button>
-            <button onclick="filterBlog('tips')" class="category-badge px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold transition" id="blogTips">Buying Tips</button>
-            <button onclick="filterBlog('news')" class="category-badge px-6 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold transition" id="blogNews">Market News</button>
+    <div class="max-w-4xl mx-auto px-4">
+        <div id="blogDetail">
+            <!-- Loading State -->
+            <div id="loading" class="text-center py-20">
+                <div class="inline-block w-12 h-12 border-4 border-gold border-t-transparent rounded-full animate-spin"></div>
+                <p class="mt-4 text-gray-500">Loading article...</p>
+            </div>
+            
+            <!-- Blog Content (hidden until loaded) -->
+            <div id="blogContent" style="display: none;"></div>
         </div>
-        
-        <!-- Blog Grid -->
-        <div id="blogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Blog posts loaded here -->
-        </div>
-        
-        <!-- No Results -->
-        <div id="noBlogResults" class="text-center py-12 hidden">
-            <p class="text-gray-500 text-lg">No blog posts found in this category.</p>
-        </div>
-        
     </div>
 </section>
 
-<!-- Newsletter Section -->
-<section class="py-16 bg-gold">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-black mb-4">Subscribe to Our Newsletter</h2>
-        <p class="text-black/80 mb-6">Get the latest property updates and real estate tips delivered to your inbox.</p>
-        <div class="flex flex-wrap gap-4 justify-center">
-            <input type="email" placeholder="Enter your email" class="px-6 py-3 rounded-full flex-1 max-w-md focus:outline-none focus:ring-2 focus:ring-black">
-            <button class="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-black/80 transition">Subscribe</button>
-        </div>
+<!-- Related Posts -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Related Articles</h2>
+        <div id="relatedPosts" class="grid md:grid-cols-3 gap-8"></div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#0A0A0A] text-white pt-16 pb-8 mt-12">
+<footer class="bg-[#0A0A0A] text-white pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 mb-12">
             <div>
@@ -159,133 +137,435 @@
 </a>
 
 <script>
+    // Blog Posts Database (same as blog.html)
     const blogPosts = [
+        // Educational Posts
         {
             id: 1,
             title: 'Why Invest in Ogun State Real Estate in 2026?',
             category: 'investment',
             excerpt: 'Discover the booming real estate market in Ogun State and why it\'s the best investment destination in Nigeria right now.',
-            image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600',
+            image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800',
             date: 'June 15, 2026',
             readTime: '5 min read',
-            author: 'Mikel Marvel'
+            author: 'Mikel Marvel',
+            content: `
+                <p>Ogun State has emerged as one of Nigeria's most promising real estate investment destinations in 2026. With its strategic location, improving infrastructure, and growing economy, the state offers unparalleled opportunities for both residential and commercial property investors.</p>
+                
+                <h2>Why Ogun State?</h2>
+                <p>Ogun State's proximity to Lagos, Nigeria's commercial capital, makes it an attractive alternative for those seeking affordable properties without sacrificing accessibility. The ongoing development of road networks, including the Lagos-Ibadan expressway expansion, has significantly improved connectivity.</p>
+                
+                <h2>Key Investment Opportunities</h2>
+                <ul>
+                    <li><strong>Greenstone Garden, Abeokuta:</strong> Secure land with C of O, flexible payment plans starting from ₦2.5M</li>
+                    <li><strong>Pistis Gardens, Ibadan:</strong> Gated estate with 24/7 security, prices from ₦500K</li>
+                    <li><strong>Starcrest The Annex, Alabata:</strong> Agro-investment with coconut and oil palm trees, from ₦1M</li>
+                    <li><strong>Nova Ville, Ibefun:</strong> Freehold properties with Registered Survey & Deed of Assignment</li>
+                </ul>
+                
+                <h2>Why Invest Now?</h2>
+                <ul>
+                    <li>📈 <strong>Rapid appreciation:</strong> Property values in Ogun State have increased by 15-20% annually</li>
+                    <li>🏗️ <strong>Infrastructure development:</strong> New roads, schools, and hospitals are being built</li>
+                    <li>💼 <strong>Economic growth:</strong> Ogun State is becoming a commercial and industrial hub</li>
+                    <li>🔒 <strong>Security:</strong> Gated estates and 24/7 security are now standard</li>
+                </ul>
+                
+                <blockquote>"Ogun State is not just a place to live—it's a place to build wealth through real estate."</blockquote>
+                
+                <h2>Take Action Today</h2>
+                <p>Don't miss out on these incredible opportunities. Whether you're looking for land, residential properties, or agro-investments, Mikel Marvel Realty has the perfect property for you.</p>
+                
+                <p><strong>Contact us today to schedule an inspection or secure your plot!</strong></p>
+            `
         },
         {
             id: 2,
             title: '5 Things to Check Before Buying Land',
             category: 'land',
             excerpt: 'Essential tips for land buyers: title verification, survey plans, physical inspection, and more.',
-            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600',
+            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800',
             date: 'June 12, 2026',
             readTime: '4 min read',
-            author: 'Mikel Marvel'
+            author: 'Mikel Marvel',
+            content: `
+                <p>Buying land is a significant investment. To avoid costly mistakes, here are five essential things you must check before making a purchase.</p>
+                
+                <h2>1. Verify the Title Document</h2>
+                <p>Always ask for and verify the title document. This could be a C of O (Certificate of Ownership), Registered Survey, or Deed of Assignment. Ensure the document is authentic and matches the seller's claims.</p>
+                
+                <h2>2. Conduct a Physical Inspection</h2>
+                <p>Never buy land without visiting the site. Check the topography, accessibility, and surrounding environment. Look for any potential issues like flooding, swampy areas, or disputes with neighbors.</p>
+                
+                <h2>3. Check for Government Acquisition</h2>
+                <p>Ensure the land is not under government acquisition. This can be done by visiting the appropriate government offices or hiring a surveyor to conduct a search.</p>
+                
+                <h2>4. Review the Survey Plan</h2>
+                <p>The survey plan should be done by a licensed surveyor and approved by the Surveyor General. This confirms the exact size and boundaries of the land.</p>
+                
+                <h2>5. Understand the Payment Plan</h2>
+                <p>Clarify the payment terms, including initial deposit, installment options, and total cost. Ensure there are no hidden fees.</p>
+                
+                <blockquote>"A little due diligence today can save you from a lot of trouble tomorrow."</blockquote>
+                
+                <p><strong>Ready to buy? Mikel Marvel Realty offers only verified properties with proper documentation.</strong></p>
+            `
         },
         {
             id: 3,
             title: 'Coconut Farming: A Lucrative Investment Opportunity',
             category: 'investment',
             excerpt: 'Learn why agro-investment with Starcrest The Annex is one of the smartest investment moves in 2026.',
-            image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600',
+            image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=800',
             date: 'June 10, 2026',
             readTime: '6 min read',
-            author: 'Mikel Marvel'
+            author: 'Mikel Marvel',
+            content: `
+                <p>Agro-investment is gaining traction as a reliable and profitable investment option in Nigeria. Starcrest The Annex offers a unique opportunity to invest in coconut farming with guaranteed returns.</p>
+                
+                <h2>Why Coconut Farming?</h2>
+                <p>Coconut has multiple uses—from food and beverages to cosmetics and industrial applications. The demand for coconut products is increasing locally and internationally, making it a high-demand commodity.</p>
+                
+                <h2>Starcrest The Annex Opportunity</h2>
+                <ul>
+                    <li>🌴 <strong>1 Plot (10 Coconut trees):</strong> ₦1,000,000</li>
+                    <li>🌴 <strong>1 Acre (60 Coconut trees):</strong> ₦6,000,000</li>
+                    <li>🌴 <strong>1 Hectare (150 Coconut trees):</strong> ₦15,000,000</li>
+                    <li>🌴 <strong>5 Hectares (750 Coconut trees):</strong> ₦75,000,000</li>
+                </ul>
+                
+                <h2>What You Get</h2>
+                <ul>
+                    <li>✅ 100% dry land, free from swampy areas</li>
+                    <li>✅ C of O / Registered Survey documentation</li>
+                    <li>✅ Farm workers lodge under construction</li>
+                    <li>✅ Perimeter fencing and security</li>
+                    <li>✅ Proper drainage and road network</li>
+                </ul>
+                
+                <h2>Important Notice</h2>
+                <p>⚠️ <strong>Coconut sales at Starcrest The Annex close on June 30th, 2026!</strong> Don't miss this opportunity to invest in a high-yielding agro-business.</p>
+                
+                <blockquote>"Agro-investment is not just about returns; it's about contributing to food security and economic growth."</blockquote>
+                
+                <p><strong>Contact us today to secure your coconut investment before the deadline!</strong></p>
+            `
         },
         {
             id: 4,
             title: 'How to Secure Your Property Title in Nigeria',
             category: 'tips',
             excerpt: 'A step-by-step guide to ensuring your property title is authentic and properly documented.',
-            image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600',
+            image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
             date: 'June 8, 2026',
             readTime: '7 min read',
-            author: 'Mikel Marvel'
+            author: 'Mikel Marvel',
+            content: `
+                <p>Securing your property title in Nigeria is crucial for protecting your investment. Here's a comprehensive guide to ensuring your property title is authentic and properly documented.</p>
+                
+                <h2>Step 1: Understand the Different Types of Titles</h2>
+                <ul>
+                    <li><strong>Certificate of Occupancy (C of O):</strong> The most secure type of title, issued by the government.</li>
+                    <li><strong>Registered Survey:</strong> A survey plan approved by the Surveyor General.</li>
+                    <li><strong>Deed of Assignment:</strong> A legal document transferring ownership from seller to buyer.</li>
+                    <li><strong>Deed of Gift:</strong> Used when property is given as a gift.</li>
+                    <li><strong>Deed of Mortgage:</strong> Used when property is used as collateral.</li>
+                </ul>
+                
+                <h2>Step 2: Conduct Due Diligence</h2>
+                <p>Hire a lawyer and a surveyor to conduct due diligence. This includes checking for government acquisition, verifying the authenticity of documents, and ensuring there are no disputes.</p>
+                
+                <h2>Step 3: Proper Documentation</h2>
+                <p>Ensure all documents are properly executed and signed. This includes the Deed of Assignment, Contract of Sale, and Power of Attorney if applicable.</p>
+                
+                <h2>Step 4: Register Your Property</h2>
+                <p>After purchase, register your property at the appropriate land registry. This provides legal proof of ownership.</p>
+                
+                <h2>Step 5: Keep Copies of All Documents</h2>
+                <p>Store physical and digital copies of all documents in a safe place. This includes receipts, contracts, and title documents.</p>
+                
+                <blockquote>"A secure title is the foundation of a secure investment."</blockquote>
+                
+                <p><strong>At Mikel Marvel Realty, we ensure all our properties have proper documentation and verified titles.</strong></p>
+            `
         },
         {
             id: 5,
             title: 'Ogun State: The Next Real Estate Hub',
             category: 'news',
             excerpt: 'With new infrastructure and development, Ogun State is becoming the preferred destination for investors.',
-            image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600',
+            image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800',
             date: 'June 5, 2026',
             readTime: '5 min read',
-            author: 'Mikel Marvel'
+            author: 'Mikel Marvel',
+            content: `
+                <p>Ogun State is rapidly emerging as the next real estate hub in Nigeria. With its strategic location, improving infrastructure, and growing economy, the state offers unparalleled opportunities for both residential and commercial property investors.</p>
+                
+                <h2>Infrastructure Development</h2>
+                <p>The state government has invested heavily in infrastructure, including road networks, power supply, and water systems. These developments have made Ogun State more attractive to investors.</p>
+                
+                <h2>Affordable Properties</h2>
+                <p>Compared to Lagos, properties in Ogun State are significantly more affordable while still offering proximity to the commercial capital. This makes it an attractive option for first-time buyers and investors.</p>
+                
+                <h2>Growing Economy</h2>
+                <p>Ogun State is becoming a commercial and industrial hub, attracting businesses and creating jobs. This economic growth is driving demand for both residential and commercial properties.</p>
+                
+                <h2>Key Investment Areas</h2>
+                <ul>
+                    <li>🏠 <strong>Abeokuta:</strong> Greenstone Garden and other secure estates</li>
+                    <li>🌿 <strong>Ibadan:</strong> Pistis Gardens and Southern-Crest</li>
+                    <li>🌴 <strong>Alabata:</strong> Starcrest The Annex agro-investment</li>
+                    <li>🏗️ <strong>Ibefun:</strong> Nova Ville freehold properties</li>
+                </ul>
+                
+                <blockquote>"Ogun State is not just the future of real estate; it's the present."</blockquote>
+                
+                <p><strong>Ready to invest in Ogun State? Mikel Marvel Realty has the perfect property for you.</strong></p>
+            `
         },
         {
             id: 6,
             title: 'Why Choose Gated Estates for Your Home',
             category: 'tips',
             excerpt: 'The benefits of living in gated estates: security, community, amenities, and property value.',
-            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600',
+            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800',
             date: 'June 3, 2026',
             readTime: '4 min read',
-            author: 'Mikel Marvel'
+            author: 'Mikel Marvel',
+            content: `
+                <p>Gated estates have become increasingly popular in Nigeria, offering a range of benefits that make them an attractive choice for homeowners and investors alike.</p>
+                
+                <h2>1. Security</h2>
+                <p>Gated estates offer 24/7 security, including CCTV surveillance, security guards, and controlled access points. This provides peace of mind for residents.</p>
+                
+                <h2>2. Community Living</h2>
+                <p>Living in a gated estate fosters a sense of community. Residents can interact with neighbors, participate in community events, and enjoy shared amenities.</p>
+                
+                <h2>3. Amenities</h2>
+                <p>Many gated estates offer amenities such as swimming pools, gyms, playgrounds, and recreational areas. This enhances the quality of life for residents.</p>
+                
+                <h2>4. Property Value</h2>
+                <p>Properties in gated estates tend to appreciate faster than properties in non-gated areas. The security and amenities make them more desirable to potential buyers.</p>
+                
+                <h2>5. Controlled Environment</h2>
+                <p>Gated estates often have rules and regulations that maintain the aesthetic and functionality of the community. This ensures a clean, organized, and pleasant living environment.</p>
+                
+                <h2>Our Gated Estates</h2>
+                <ul>
+                    <li>🏠 <strong>Pistis Gardens:</strong> Gated estate in Kila, Apata Ibadan with 24/7 security</li>
+                    <li>🏡 <strong>Greenstone Garden:</strong> Gated estate in Kobape, Abeokuta with smart garden security</li>
+                </ul>
+                
+                <blockquote>"A gated estate is not just a home; it's a lifestyle."</blockquote>
+                
+                <p><strong>Discover the benefits of gated estate living with Mikel Marvel Realty.</strong></p>
+            `
+        },
+        
+        // Celebration Posts - SOLD Properties
+        {
+            id: 7,
+            title: '🎉 1 Plot Sold by Sikirullah Abdulrasheed!',
+            category: 'celebration',
+            excerpt: 'Congratulations to Sikirullah Abdulrasheed on successfully closing 1 Plot at Starcrest The Annex!',
+            image: 'https://i.imgur.com/G8JS2Sp.jpeg',
+            date: 'June 23, 2026',
+            readTime: '2 min read',
+            author: 'Mikel Marvel Realty',
+            content: `
+                <div class="bg-gold/20 p-6 rounded-2xl text-center mb-6">
+                    <h2 class="text-3xl font-bold text-black">🎉 CONGRATULATIONS SIKIRULLAH! 🎉</h2>
+                    <p class="text-lg text-black/80 mt-2">1 Plot of Starcrest The Annex - SOLD!</p>
+                </div>
+                
+                <p>We are thrilled to celebrate the success of our amazing realtor, <strong>Sikirullah Abdulrasheed</strong>, who has just sealed a deal on <strong>1 Plot of Starcrest The Annex</strong>!</p>
+                
+                <blockquote>"This is just the beginning of a relentless season of alerts for you! 💸🚀"</blockquote>
+                
+                <h2>Deal Details</h2>
+                <ul>
+                    <li>🏷️ <strong>Property:</strong> 1 Plot of Starcrest The Annex</li>
+                    <li>📍 <strong>Location:</strong> Alabata, FUNAAB Axis, Ogun State</li>
+                    <li>🌴 <strong>Includes:</strong> 10 Coconut trees</li>
+                    <li>🏢 <strong>Developer:</strong> Astracrest Investment Limited</li>
+                    <li>👤 <strong>Sold By:</strong> Sikirullah Abdulrasheed</li>
+                </ul>
+                
+                <div class="bg-green-50 p-6 rounded-2xl mt-6">
+                    <h2 class="text-xl font-bold text-green-700">🌟 Join the Celebration!</h2>
+                    <p class="text-gray-700">Team Astracrest, flood the chat with massive love and congratulations for this win!</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🎉</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">💸</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🚀</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🔥</span>
+                    </div>
+                    <p class="mt-3 text-sm text-gray-500">#RealEstate #Investment #StarcrestTheAnnex #Astracrest</p>
+                </div>
+            `
+        },
+        {
+            id: 8,
+            title: '🎉 3 Plots Sold by Chinaka Amarachi Favourite!',
+            category: 'celebration',
+            excerpt: 'Congratulations to Chinaka Amarachi Favourite on sealing a major deal at Starcrest The Annex! 3 Plots sold!',
+            image: 'https://i.imgur.com/Y9TVhkP.jpeg',
+            date: 'June 23, 2026',
+            readTime: '2 min read',
+            author: 'Mikel Marvel Realty',
+            content: `
+                <div class="bg-gold/20 p-6 rounded-2xl text-center mb-6">
+                    <h2 class="text-3xl font-bold text-black">🎉 CONGRATULATIONS CHINAKA! 🎉</h2>
+                    <p class="text-lg text-black/80 mt-2">3 Plots of Starcrest The Annex - SOLD!</p>
+                </div>
+                
+                <p>We are thrilled to celebrate the success of our amazing realtor, <strong>Chinaka Amarachi Favourite</strong>, who has just sealed a deal on <strong>3 Plots of Starcrest The Annex</strong>!</p>
+                
+                <blockquote>"This is what dedication and excellence look like. Closing an acre is no small feat, and we are proud to have you as a partner in the Astracrest family." 🦅✨</blockquote>
+                
+                <h2>Deal Details</h2>
+                <ul>
+                    <li>🏷️ <strong>Property:</strong> 3 Plots of Starcrest The Annex</li>
+                    <li>📍 <strong>Location:</strong> Alabata, FUNAAB Axis, Ogun State</li>
+                    <li>🌴 <strong>Includes:</strong> 30 Coconut trees</li>
+                    <li>🏢 <strong>Developer:</strong> Astracrest Investment Limited</li>
+                    <li>👤 <strong>Sold By:</strong> Chinaka Amarachi Favourite</li>
+                </ul>
+                
+                <div class="bg-green-50 p-6 rounded-2xl mt-6">
+                    <h2 class="text-xl font-bold text-green-700">🌟 Join the Celebration!</h2>
+                    <p class="text-gray-700">Realtors, flood the chat with congratulations for this historic win!</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🎉</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">💵</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🦅</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">✨</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🔥</span>
+                    </div>
+                    <p class="mt-3 text-sm text-gray-500">#RealEstate #Investment #StarcrestTheAnnex #Astracrest</p>
+                </div>
+            `
+        },
+        {
+            id: 9,
+            title: '🔥 1 Acre Sold by Shyclef Properties!',
+            category: 'celebration',
+            excerpt: 'Congratulations to Shyclef Properties on successfully closing 1 ACRE at Starcrest The Annex!',
+            image: 'https://i.imgur.com/qY83pQD.jpeg',
+            date: 'June 23, 2026',
+            readTime: '2 min read',
+            author: 'Mikel Marvel Realty',
+            content: `
+                <div class="bg-gold/20 p-6 rounded-2xl text-center mb-6">
+                    <h2 class="text-3xl font-bold text-black">🎉 CONGRATULATIONS SHYCLEF PROPERTIES! 🎉</h2>
+                    <p class="text-lg text-black/80 mt-2">1 ACRE of Starcrest The Annex - SOLD!</p>
+                </div>
+                
+                <p>We are thrilled to celebrate the success of our amazing realtor, <strong>Shyclef Properties</strong>, who has just sealed a deal on <strong>1 ACRE of Starcrest The Annex</strong>!</p>
+                
+                <blockquote>"This is what dedication and excellence look like. Closing an acre is no small feat, and we are proud to have you as a partner in the Astracrest family." 🦅✨</blockquote>
+                
+                <h2>Deal Details</h2>
+                <ul>
+                    <li>🏷️ <strong>Property:</strong> 1 Acre of Starcrest The Annex</li>
+                    <li>📍 <strong>Location:</strong> Alabata, FUNAAB Axis, Ogun State</li>
+                    <li>🌴 <strong>Includes:</strong> 60 Coconut trees</li>
+                    <li>🏢 <strong>Developer:</strong> Astracrest Investment Limited</li>
+                    <li>👤 <strong>Sold By:</strong> Shyclef Properties</li>
+                </ul>
+                
+                <div class="bg-green-50 p-6 rounded-2xl mt-6">
+                    <h2 class="text-xl font-bold text-green-700">🌟 Join the Celebration!</h2>
+                    <p class="text-gray-700">Realtors, flood the chat with congratulations and celebrate this historic win!</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🎉</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">💵</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🦅</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">✨</span>
+                        <span class="bg-white px-4 py-2 rounded-full shadow-sm">🔥</span>
+                    </div>
+                    <p class="mt-3 text-sm text-gray-500">#RealEstate #Investment #StarcrestTheAnnex #Astracrest</p>
+                </div>
+            `
         }
     ];
 
-    let currentFilter = 'all';
+    // Get blog ID from URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
 
-    function renderBlog(filter) {
-        const grid = document.getElementById('blogGrid');
-        const noResults = document.getElementById('noBlogResults');
+    const blogId = getQueryParam('id');
+    const post = blogPosts.find(p => p.id === parseInt(blogId));
+
+    if (!post) {
+        document.getElementById('loading').innerHTML = `
+            <div class="text-center py-12">
+                <h2 class="text-2xl font-bold text-gray-700">Article Not Found</h2>
+                <p class="text-gray-500 mt-2">The article you're looking for doesn't exist.</p>
+                <a href="blog.html" class="inline-block mt-4 text-gold font-semibold hover:underline">← Back to Blog</a>
+            </div>
+        `;
+    } else {
+        document.getElementById('loading').style.display = 'none';
         
-        const filtered = filter === 'all' ? blogPosts : blogPosts.filter(post => post.category === filter);
-        
-        if (filtered.length === 0) {
-            grid.innerHTML = '';
-            noResults.classList.remove('hidden');
-            return;
-        }
-        
-        noResults.classList.add('hidden');
-        grid.innerHTML = filtered.map(post => `
-            <div class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg" onclick="window.location.href='blog-detail.html?id=${post.id}'">
-                <div class="overflow-hidden h-48">
-                    <img src="${post.image}" alt="${post.title}" class="blog-image w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-3 mb-3">
+        const content = `
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <img src="${post.image}" alt="${post.title}" class="w-full h-80 object-cover">
+                <div class="p-8 md:p-12">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
                         <span class="text-xs bg-gold/20 px-3 py-1 rounded-full font-semibold">${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
                         <span class="text-xs text-gray-400">${post.date}</span>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2 hover:text-gold transition">${post.title}</h3>
-                    <p class="text-gray-500 text-sm mb-4 line-clamp-2">${post.excerpt}</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-gray-400">By ${post.author}</span>
+                        <span class="text-xs text-gray-400">•</span>
                         <span class="text-xs text-gray-400">${post.readTime}</span>
                     </div>
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">${post.title}</h1>
+                    <p class="text-gray-500 mb-6">By ${post.author}</p>
+                    <div class="blog-content">
+                        ${post.content}
+                    </div>
+                    <div class="border-t border-gray-200 pt-6 mt-8">
+                        <div class="flex flex-wrap gap-4 items-center justify-between">
+                            <span class="text-sm text-gray-500">Share this article:</span>
+                            <div class="flex gap-3">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" target="_blank" class="text-gray-400 hover:text-gold transition">Facebook</a>
+                                <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}" target="_blank" class="text-gray-400 hover:text-gold transition">Twitter</a>
+                                <a href="https://wa.me/?text=${encodeURIComponent(post.title + ' - ' + window.location.href)}" target="_blank" class="text-gray-400 hover:text-gold transition">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 pt-6 mt-6 text-center">
+                        <a href="blog.html" class="text-gold font-semibold hover:underline">← Back to All Articles</a>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.getElementById('blogContent').innerHTML = content;
+        document.getElementById('blogContent').style.display = 'block';
+    }
+
+    // Related Posts (exclude current)
+    function renderRelatedPosts() {
+        const container = document.getElementById('relatedPosts');
+        const related = blogPosts.filter(p => p.id !== parseInt(blogId)).slice(0, 3);
+        
+        container.innerHTML = related.map(post => `
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition cursor-pointer" onclick="window.location.href='blog-detail.html?id=${post.id}'">
+                <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xs bg-gold/20 px-2 py-1 rounded-full font-semibold">${post.category}</span>
+                    </div>
+                    <h3 class="font-bold text-sm hover:text-gold transition line-clamp-2">${post.title}</h3>
+                    <p class="text-gray-500 text-xs mt-2">${post.date}</p>
                 </div>
             </div>
         `).join('');
     }
 
-    function filterBlog(category) {
-        currentFilter = category;
-        
-        // Update button styles
-        document.querySelectorAll('.category-badge').forEach(btn => {
-            btn.classList.remove('bg-gold', 'text-black');
-            btn.classList.add('bg-gray-200', 'text-gray-700');
-        });
-        
-        const btnMap = {
-            'all': 'blogAll',
-            'investment': 'blogInvestment',
-            'land': 'blogLand',
-            'tips': 'blogTips',
-            'news': 'blogNews'
-        };
-        
-        const activeBtn = document.getElementById(btnMap[category]);
-        if (activeBtn) {
-            activeBtn.classList.remove('bg-gray-200', 'text-gray-700');
-            activeBtn.classList.add('bg-gold', 'text-black');
-        }
-        
-        renderBlog(category);
-    }
-
-    // Initial render
-    renderBlog('all');
+    renderRelatedPosts();
 </script>
 
 </body>
