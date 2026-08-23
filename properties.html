@@ -2,740 +2,316 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#4F46E5">
-    <meta name="description" content="AllScan - Scan anything. Know instantly. Free QR code and barcode scanner.">
-    <title>AllScan - QR & Barcode Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - Mikel Marvel Realty</title>
     
-    <!-- Tailwind CSS CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- html5-qrcode library -->
-    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #818cf8;
-            margin-bottom: 10px;
-        }
-        
-        .tagline {
-            color: #94a3b8;
-            margin-bottom: 30px;
-        }
-        
-        .scanner-box {
-            background: #1e293b;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 20px;
-            border: 2px solid #334155;
-        }
-        
-        .btn {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-bottom: 10px;
-        }
-        
-        .btn-primary {
-            background: #6366f1;
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #4f46e5;
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: #334155;
-            color: #e2e8f0;
-        }
-        
-        .btn-secondary:hover {
-            background: #475569;
-        }
-        
-        #qr-reader {
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-        
-        #qr-reader video {
-            width: 100% !important;
-            border-radius: 12px;
-        }
-        
-        .hidden {
-            display: none !important;
-        }
-        
-        .result-card {
-            background: #1e293b;
-            border-radius: 16px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: left;
-            border: 1px solid #334155;
-        }
-        
-        .result-type {
-            color: #818cf8;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .result-content {
-            color: #e2e8f0;
-            word-break: break-all;
-            margin-bottom: 16px;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .action-btn {
-            padding: 10px 16px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.875rem;
-        }
-        
-        .action-btn.open {
-            background: #10b981;
-            color: white;
-        }
-        
-        .action-btn.copy {
-            background: #3b82f6;
-            color: white;
-        }
-        
-        .action-btn.share {
-            background: #8b5cf6;
-            color: white;
-        }
-        
-        .history-item {
-            background: #1e293b;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 1px solid #334155;
-        }
-        
-        .history-item:hover {
-            background: #334155;
-        }
-        
-        .error-message {
-            background: #7f1d1d;
-            color: #fca5a5;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-        
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #334155;
-            border-top: 4px solid #818cf8;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #FAF8F5; color: #1A1A1A; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        .bg-gold { background-color: #C6A55C; }
+        .text-gold { color: #C6A55C; }
+        .bg-charcoal { background-color: #1A1A1A; }
+        .hover-lift:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Main Screen -->
-        <div id="mainScreen">
-            <div class="logo">AllScan</div>
-            <p class="tagline">Scan anything. Know instantly.</p>
-            
-            <div class="scanner-box">
-                <div style="font-size: 4rem; margin-bottom: 20px;">📷</div>
-                <h2 style="margin-bottom: 10px; color: #e2e8f0;">QR & Barcode Scanner</h2>
-                <p style="color: #94a3b8; margin-bottom: 20px;">Point your camera at any QR code or barcode</p>
-                
-                <button class="btn btn-primary" onclick="startScanner()">
-                    Start Scanning
-                </button>
-                
-                <button class="btn btn-secondary" onclick="showHistory()">
-                    View History
-                </button>
+
+<!-- Navbar -->
+<nav class="bg-[#0D0D0D] text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <a href="index.html" class="flex flex-col">
+                <span class="text-xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
+                <span class="text-[10px] text-gray-400 -mt-1">REALTY</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-sm hover:text-gold transition">Home</a>
+                <a href="properties.html" class="text-sm text-gold transition">Properties</a>
+                <a href="about.html" class="text-sm hover:text-gold transition">About</a>
+                <a href="contact.html" class="text-sm hover:text-gold transition">Contact</a>
+                <a href="partners.html" class="text-sm hover:text-gold transition">Partners</a>
+                <a href="faq.html" class="text-sm hover:text-gold transition">FAQ</a>
+                <a href="gallery.html" class="text-sm hover:text-gold transition">Gallery</a>
+                <a href="blog.html" class="text-sm hover:text-gold transition">Blog</a>
+                <a href="https://wa.me/2349071049271" target="_blank" class="bg-gold text-black px-5 py-1.5 rounded-full text-sm font-semibold">Book Inspection</a>
             </div>
-            
-            <p style="color: #64748b; font-size: 0.875rem;">
-                🔒 Your camera is only used for scanning. No data is stored on servers.
-            </p>
-        </div>
-        
-        <!-- Scanner Screen -->
-        <div id="scannerScreen" class="hidden">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <button class="btn btn-secondary" style="width: auto; margin: 0;" onclick="stopScanner()">
-                    ← Back
-                </button>
-                <h2 style="color: #e2e8f0;">Scanner</h2>
-                <div style="width: 60px;"></div>
-            </div>
-            
-            <div id="scannerLoading" class="loading-spinner"></div>
-            <div id="scannerError" class="error-message hidden"></div>
-            <div id="qr-reader"></div>
-            
-            <div style="margin-top: 20px;">
-                <button class="btn btn-secondary" onclick="stopScanner()">
-                    Cancel
-                </button>
-            </div>
-        </div>
-        
-        <!-- Result Screen -->
-        <div id="resultScreen" class="hidden">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <div style="font-size: 3rem; margin-bottom: 10px;">✅</div>
-                <h2 style="color: #10b981;">Scan Successful!</h2>
-            </div>
-            
-            <div id="resultContent"></div>
-            
-            <button class="btn btn-primary" onclick="startScanner()">
-                Scan Again
-            </button>
-            
-            <button class="btn btn-secondary" onclick="showMain()">
-                Back to Home
-            </button>
-        </div>
-        
-        <!-- History Screen -->
-        <div id="historyScreen" class="hidden">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <button class="btn btn-secondary" style="width: auto; margin: 0;" onclick="showMain()">
-                    ← Back
-                </button>
-                <h2 style="color: #e2e8f0;">History</h2>
-                <button class="btn btn-secondary" style="width: auto; margin: 0;" onclick="clearHistory()">
-                    Clear
-                </button>
-            </div>
-            
-            <div id="historyContent"></div>
         </div>
     </div>
+</nav>
 
-    <script>
-        // Global variables
-        let html5QrCode = null;
-        let scanHistory = [];
-        let currentResult = null;
-        
-        // Load history from localStorage
-        function loadHistory() {
-            try {
-                const saved = localStorage.getItem('allscan-history');
-                if (saved) {
-                    scanHistory = JSON.parse(saved);
-                }
-            } catch (e) {
-                console.error('Error loading history:', e);
-            }
-        }
-        
-        // Save history to localStorage
-        function saveHistory() {
-            try {
-                localStorage.setItem('allscan-history', JSON.stringify(scanHistory));
-            } catch (e) {
-                console.error('Error saving history:', e);
-            }
-        }
-        
-        // Screen navigation
-        function showMain() {
-            document.getElementById('mainScreen').classList.remove('hidden');
-            document.getElementById('scannerScreen').classList.add('hidden');
-            document.getElementById('resultScreen').classList.add('hidden');
-            document.getElementById('historyScreen').classList.add('hidden');
-        }
-        
-        function showHistory() {
-            document.getElementById('mainScreen').classList.add('hidden');
-            document.getElementById('scannerScreen').classList.add('hidden');
-            document.getElementById('resultScreen').classList.add('hidden');
-            document.getElementById('historyScreen').classList.remove('hidden');
-            renderHistory();
-        }
-        
-        // Start scanner
-        async function startScanner() {
-            console.log('Starting scanner...');
-            
-            // Show scanner screen
-            document.getElementById('mainScreen').classList.add('hidden');
-            document.getElementById('resultScreen').classList.add('hidden');
-            document.getElementById('historyScreen').classList.add('hidden');
-            document.getElementById('scannerScreen').classList.remove('hidden');
-            document.getElementById('scannerLoading').classList.remove('hidden');
-            document.getElementById('scannerError').classList.add('hidden');
-            document.getElementById('qr-reader').innerHTML = '';
-            
-            try {
-                // Check if browser supports camera
-                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-                    throw new Error('Your browser does not support camera access. Please use a modern browser like Chrome, Safari, or Firefox.');
-                }
-                
-                // Check for HTTPS
-                if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-                    throw new Error('Camera access requires HTTPS. Please use a secure connection.');
-                }
-                
-                // Request camera permission explicitly
-                await navigator.mediaDevices.getUserMedia({ video: true })
-                    .then(stream => {
-                        // Stop the stream immediately - we just needed permission
-                        stream.getTracks().forEach(track => track.stop());
-                    });
-                
-                console.log('Camera permission granted');
-                
-                // Create scanner instance
-                html5QrCode = new Html5Qrcode("qr-reader");
-                
-                const config = {
-                    fps: 10,
-                    qrbox: { width: 250, height: 250 },
-                    aspectRatio: 1.0,
-                };
-                
-                // Start scanning
-                await html5QrCode.start(
-                    { facingMode: "environment" },
-                    config,
-                    onScanSuccess,
-                    onScanFailure
-                );
-                
-                document.getElementById('scannerLoading').classList.add('hidden');
-                console.log('Scanner started successfully');
-                
-            } catch (error) {
-                console.error('Scanner error:', error);
-                document.getElementById('scannerLoading').classList.add('hidden');
-                
-                let errorMessage = 'Unable to start camera. ';
-                
-                if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
-                    errorMessage = 'Camera access was denied. Please allow camera access in your browser settings and try again.';
-                } else if (error.name === 'NotFoundError') {
-                    errorMessage = 'No camera was detected on this device.';
-                } else if (error.name === 'NotReadableError') {
-                    errorMessage = 'Camera is already in use by another application.';
-                } else if (error.message) {
-                    errorMessage += error.message;
-                }
-                
-                const errorElement = document.getElementById('scannerError');
-                errorElement.textContent = errorMessage;
-                errorElement.classList.remove('hidden');
-            }
-        }
-        
-        // Stop scanner
-        async function stopScanner() {
-            try {
-                if (html5QrCode) {
-                    await html5QrCode.stop();
-                    html5QrCode.clear();
-                    html5QrCode = null;
-                }
-            } catch (e) {
-                console.error('Error stopping scanner:', e);
-            }
-            
-            showMain();
-        }
-        
-        // Scan success handler
-        function onScanSuccess(decodedText, decodedResult) {
-            console.log('Scan successful:', decodedText);
-            
-            // Stop scanner
-            if (html5QrCode) {
-                html5QrCode.stop().then(() => {
-                    html5QrCode.clear();
-                    html5QrCode = null;
-                }).catch(() => {
-                    html5QrCode = null;
-                });
-            }
-            
-            // Process the result
-            const result = processContent(decodedText);
-            currentResult = result;
-            
-            // Add to history
-            scanHistory.unshift({
-                ...result,
-                timestamp: new Date().toISOString()
-            });
-            
-            // Keep only last 50 items
-            if (scanHistory.length > 50) {
-                scanHistory.length = 50;
-            }
-            
-            saveHistory();
-            
-            // Show result
-            displayResult(result);
-        }
-        
-        // Scan failure handler (called frequently during scanning)
-        function onScanFailure(error) {
-            // This is normal - called when no QR code is detected
-            // Don't show error to user
-        }
-        
-        // Process scanned content
-        function processContent(content) {
-            const trimmed = content.trim();
-            
-            // Check for URL
-            try {
-                const url = new URL(trimmed);
-                
-                if (url.protocol === 'mailto:') {
-                    return {
-                        type: 'email',
-                        content: trimmed,
-                        action: 'Send Email',
-                        actionUrl: trimmed
-                    };
-                }
-                
-                if (url.protocol === 'tel:') {
-                    return {
-                        type: 'phone',
-                        content: trimmed,
-                        action: 'Call',
-                        actionUrl: trimmed
-                    };
-                }
-                
-                if (url.hostname.includes('wa.me') || url.hostname.includes('whatsapp')) {
-                    return {
-                        type: 'whatsapp',
-                        content: trimmed,
-                        action: 'Open WhatsApp',
-                        actionUrl: trimmed
-                    };
-                }
-                
-                if (url.hostname.includes('maps.google') || url.hostname.includes('maps.apple')) {
-                    return {
-                        type: 'location',
-                        content: trimmed,
-                        action: 'Open Maps',
-                        actionUrl: trimmed
-                    };
-                }
-                
-                return {
-                    type: 'url',
-                    content: trimmed,
-                    action: 'Open Link',
-                    actionUrl: trimmed
-                };
-            } catch (e) {
-                // Not a URL
-            }
-            
-            // Check for email
-            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-                return {
-                    type: 'email',
-                    content: trimmed,
-                    action: 'Send Email',
-                    actionUrl: `mailto:${trimmed}`
-                };
-            }
-            
-            // Check for phone number
-            if (/^\+?[\d\s\-()]{10,}$/.test(trimmed)) {
-                return {
-                    type: 'phone',
-                    content: trimmed,
-                    action: 'Call',
-                    actionUrl: `tel:${trimmed.replace(/[\s\-()]/g, '')}`
-                };
-            }
-            
-            // Check for WiFi
-            if (trimmed.startsWith('WIFI:')) {
-                const wifiData = parseWifi(trimmed);
-                return {
-                    type: 'wifi',
-                    content: `Network: ${wifiData.ssid}\nPassword: ${wifiData.password}`,
-                    action: null,
-                    actionUrl: null
-                };
-            }
-            
-            // Default to text
-            return {
-                type: 'text',
-                content: trimmed,
-                action: null,
-                actionUrl: null
-            };
-        }
-        
-        // Parse WiFi string
-        function parseWifi(wifiStr) {
-            const params = {};
-            const parts = wifiStr.substring(5).split(';');
-            
-            parts.forEach(part => {
-                if (part.includes(':')) {
-                    const [key, ...valueParts] = part.split(':');
-                    const value = valueParts.join(':');
-                    if (key && value) {
-                        params[key] = value;
-                    }
-                }
-            });
-            
-            return {
-                ssid: params.S || 'Unknown',
-                password: params.P || '',
-                security: params.T || 'Unknown'
-            };
-        }
-        
-        // Display result
-        function displayResult(result) {
-            const typeEmojis = {
-                'url': '🔗',
-                'email': '📧',
-                'phone': '📞',
-                'whatsapp': '💬',
-                'location': '📍',
-                'wifi': '📶',
-                'text': '📝'
-            };
-            
-            const emoji = typeEmojis[result.type] || '📝';
-            
-            let html = `
-                <div class="result-card">
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                        <span style="font-size: 2rem;">${emoji}</span>
-                        <div>
-                            <div class="result-type">${result.type.toUpperCase()}</div>
-                            <div style="color: #64748b; font-size: 0.875rem;">${result.action || 'Content'}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="result-content">${result.content}</div>
-                    
-                    <div class="action-buttons">
-                        ${result.actionUrl ? `
-                            <button class="action-btn open" onclick="window.open('${result.actionUrl}', '_blank')">
-                                ${result.action}
-                            </button>
-                        ` : ''}
-                        
-                        <button class="action-btn copy" onclick="copyToClipboard('${result.content.replace(/'/g, "\\'")}')">
-                            Copy
-                        </button>
-                        
-                        <button class="action-btn share" onclick="shareContent('${result.content.replace(/'/g, "\\'")}')">
-                            Share
-                        </button>
-                    </div>
+<!-- Urgent Notice Banner -->
+<div class="bg-red-600 text-white py-3 px-4 text-center">
+    <p class="text-sm font-semibold">⚠️ IMPORTANT: Coconut sales at Starcrest The Annex close on June 30th, 2026! ⚠️</p>
+</div>
+
+<!-- Page Header -->
+<section class="bg-charcoal text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Properties</h1>
+        <p class="text-gray-300 text-lg">Discover genuine lands, luxury apartments, and agro investments across Nigeria</p>
+    </div>
+</section>
+
+<!-- Filters -->
+<section class="py-8 bg-white shadow-md sticky top-16 z-40">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-wrap gap-4">
+            <select id="typeFilter" class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
+                <option value="all">All Types</option>
+                <option value="Land">Land</option>
+                <option value="Agro">Agro Investment</option>
+                <option value="Apartment">Apartment</option>
+            </select>
+            <select id="locationFilter" class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
+                <option value="all">All Locations</option>
+                <option value="Abeokuta">Abeokuta</option>
+                <option value="Ibadan">Ibadan</option>
+                <option value="Alabata">Alabata, FUNAAB</option>
+                <option value="Ibefun">Ibefun</option>
+                <option value="Ikeja">Ikeja</option>
+                <option value="Mowe">Mowe</option>
+                <option value="Ido">Ido</option>
+                <option value="Olodo">Olodo</option>
+            </select>
+            <select id="priceFilter" class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
+                <option value="all">All Prices</option>
+                <option value="0-1000000">₦0 - ₦1M</option>
+                <option value="1000000-5000000">₦1M - ₦5M</option>
+                <option value="5000000-15000000">₦5M - ₦15M</option>
+                <option value="15000000-30000000">₦15M - ₦30M</option>
+                <option value="30000000-100000000">₦30M - ₦100M</option>
+                <option value="100000000+">₦100M+</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Search by title or location..." class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold">
+            <button onclick="resetFilters()" class="px-6 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition">Reset</button>
+        </div>
+    </div>
+</section>
+
+<!-- Properties Grid -->
+<section class="py-16 bg-cream">
+    <div class="max-w-7xl mx-auto px-4">
+        <div id="propertiesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div id="noResults" class="text-center py-12 hidden">
+            <p class="text-gray-500 text-lg">No properties found matching your criteria.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0A0A0A] text-white pt-16 pb-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <a href="index.html" class="flex flex-col mb-4">
+                    <span class="text-2xl font-bold tracking-wide">MIKEL <span class="text-gold">MARVEL</span></span>
+                    <span class="text-xs text-gray-400 -mt-1">REALTY</span>
+                </a>
+                <p class="text-gray-400 text-sm mb-4">Your trusted real estate partner in Nigeria.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=61582573435554" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/michealnosiru" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://x.com/urrg_realtors?s=21" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="X">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://uniqueradiancerealtorsgroup.com/" target="_blank" class="text-gray-400 hover:text-gold transition" aria-label="URRG Website">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </a>
                 </div>
-            `;
-            
-            document.getElementById('resultContent').innerHTML = html;
-            document.getElementById('scannerScreen').classList.add('hidden');
-            document.getElementById('resultScreen').classList.remove('hidden');
-        }
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+                    <li><a href="properties.html" class="hover:text-gold transition">Properties</a></li>
+                    <li><a href="about.html" class="hover:text-gold transition">About</a></li>
+                    <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+                    <li><a href="faq.html" class="hover:text-gold transition">FAQ</a></li>
+                    <li><a href="gallery.html" class="hover:text-gold transition">Gallery</a></li>
+                    <li><a href="blog.html" class="hover:text-gold transition">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Our Affiliation</h3>
+                <div class="flex flex-col items-start">
+                    <img src="https://i.imgur.com/gmLqLgS.png" alt="URRG Logo" class="h-12 w-auto mb-2">
+                    <p class="text-gray-400 text-sm">Proud member of <span class="text-gold font-semibold">Unique Radiance Realtors Group</span></p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contact</h3>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li>📞 +234 907 104 9271</li>
+                    <li>✉️ marvelmikel5625@gmail.com</li>
+                    <li>📍 Nigeria</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 Mikel Marvel Realty. All rights reserved.</p>
+            <p class="text-xs text-gray-600 mt-1">Proudly affiliated with <span class="text-gold">Unique Radiance Realtors Group (URRG)</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/2349071049271" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition hover:scale-110 duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</a>
+
+<script>
+    const properties = [
+        // GREENSTONE GARDEN - Kobape (3 properties)
+        { id: 1, title: 'Greenstone Garden - 300sqm', location: 'Kobape, Abeokuta', price: 2500000, type: 'Land', sqm: 300, image: 'https://i.imgur.com/OuKu7sh.jpeg', status: 'available', deposit: '₦500,000', features: 'Smart Garden Security, Greenery, Central Water System, C of O File No: OW/PL/C642', developer: 'Lifescape Global' },
+        { id: 2, title: 'Greenstone Garden - 600sqm', location: 'Kobape, Abeokuta', price: 4000000, type: 'Land', sqm: 600, image: 'https://i.imgur.com/mT8mXzp.jpeg', status: 'available', deposit: '₦500,000', features: 'Smart Garden Security, Greenery, Central Water System, C of O File No: OW/PL/C642', developer: 'Lifescape Global' },
+        { id: 3, title: 'Greenstone Garden - 6 Plots (Acre Deal)', location: 'Kobape, Abeokuta', price: 24000000, type: 'Land', sqm: 2500, image: 'https://i.imgur.com/8dDKQRZ.jpeg', status: 'available', deposit: '₦2,500,000', features: '6 Plots, Flexible 12-month payment plan', developer: 'Lifescape Global' },
         
-        // Copy to clipboard
-        async function copyToClipboard(text) {
-            try {
-                await navigator.clipboard.writeText(text);
-                alert('Copied to clipboard!');
-            } catch (e) {
-                console.error('Copy failed:', e);
-                // Fallback
-                const textarea = document.createElement('textarea');
-                textarea.value = text;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                alert('Copied to clipboard!');
+        // PISTIS GARDENS - Ibadan (4 properties)
+        { id: 4, title: 'Pistis Gardens - 150sqm', location: 'Kila, Apata Ibadan, Oyo', price: 500000, type: 'Land', sqm: 150, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦100,000', features: 'Gated Estate, 24/7 Security, Perimeter Fencing, Good Road Network, C of O in view', developer: 'Luminous Hills' },
+        { id: 5, title: 'Pistis Gardens - 300sqm', location: 'Kila, Apata Ibadan, Oyo', price: 1000000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦100,000', features: 'Gated Estate, 24/7 Security, Perimeter Fencing, Good Road Network, C of O in view', developer: 'Luminous Hills' },
+        { id: 6, title: 'Pistis Gardens - 450sqm', location: 'Kila, Apata Ibadan, Oyo', price: 1200000, type: 'Land', sqm: 450, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦100,000', features: 'Gated Estate, 24/7 Security, Perimeter Fencing, Good Road Network, C of O in view', developer: 'Luminous Hills' },
+        { id: 7, title: 'Pistis Gardens - 600sqm', location: 'Kila, Apata Ibadan, Oyo', price: 1500000, type: 'Land', sqm: 600, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦100,000', features: 'Gated Estate, 24/7 Security, Perimeter Fencing, Good Road Network, C of O in view', developer: 'Luminous Hills' },
+        
+        // SOUTHERN-CREST - Ibadan (3 properties)
+        { id: 8, title: 'Southern-Crest - 300sqm', location: 'Omi-Adio, Apata Ibadan, Oyo', price: 1000000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦100,000', features: 'Premium estate with good road network', developer: 'Luminous Hills' },
+        { id: 9, title: 'Southern-Crest - 450sqm', location: 'Omi-Adio, Apata Ibadan, Oyo', price: 1125000, type: 'Land', sqm: 450, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦100,000', features: 'Premium estate with good road network', developer: 'Luminous Hills' },
+        { id: 10, title: 'Southern-Crest - 600sqm', location: 'Omi-Adio, Apata Ibadan, Oyo', price: 1500000, type: 'Land', sqm: 600, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦100,000', features: 'Premium estate with good road network', developer: 'Luminous Hills' },
+        
+        // SOUTHERN CREST ANNEX - Ido, Ibadan (2 properties)
+        { id: 11, title: 'Southern Crest Annex - 300sqm', location: 'Ido, Ibadan, Oyo', price: 2300000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦500,000', features: 'Motorable Road, Perimeter Fencing, Gate House, C of O in view, Fast developing area', developer: 'Astracrest Investment Limited' },
+        { id: 12, title: 'Southern Crest Annex - 600sqm', location: 'Ido, Ibadan, Oyo', price: 4250000, type: 'Land', sqm: 600, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦500,000', features: 'Motorable Road, Perimeter Fencing, Gate House, C of O in view, Fast developing area', developer: 'Astracrest Investment Limited' },
+        
+        // NOVA VILLE - Ibefun (2 properties)
+        { id: 13, title: 'Nova Ville - 300sqm', location: 'Ibefun, Ogun State', price: 4000000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦500,000', features: '100% dry land, Registered Survey & Deed of Assignment, Freehold', developer: 'Square Metres' },
+        { id: 14, title: 'Nova Ville - 500sqm', location: 'Ibefun, Ogun State', price: 4500000, type: 'Land', sqm: 500, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦500,000', features: '100% dry land, Registered Survey & Deed of Assignment, Freehold', developer: 'Square Metres' },
+        
+        // DOXACREST RESIDENCES - Ido, Ibadan (4 properties)
+        { id: 15, title: 'Doxacrest Residences - 150sqm', location: 'Ido, Ibadan, Oyo', price: 570000, type: 'Land', sqm: 150, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦200,000', features: 'Green boulevard, Gated estate, C of O in view, Security, Perimeter fencing, Drainage, Street lights, Water & Electricity', developer: 'Astracrest Investment Limited' },
+        { id: 16, title: 'Doxacrest Residences - 300sqm', location: 'Ido, Ibadan, Oyo', price: 1140000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦300,000', features: 'Green boulevard, Gated estate, C of O in view, Security, Perimeter fencing, Drainage, Street lights, Water & Electricity', developer: 'Astracrest Investment Limited' },
+        { id: 17, title: 'Doxacrest Residences - 500sqm', location: 'Ido, Ibadan, Oyo', price: 1900000, type: 'Land', sqm: 500, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦500,000', features: 'Green boulevard, Gated estate, C of O in view, Security, Perimeter fencing, Drainage, Street lights, Water & Electricity', developer: 'Astracrest Investment Limited' },
+        { id: 18, title: 'Doxacrest Residences - 1 Plot (SOLD)', location: 'Ido, Ibadan, Oyo', price: 3800000, type: 'Land', sqm: 1000, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'sold', deposit: 'SOLD', features: 'Green boulevard, Gated estate, C of O in view - SOLD by Babalola Olaniyi Peter! 🎉', developer: 'Astracrest Investment Limited', soldBy: 'Babalola Olaniyi Peter' },
+        
+        // VESTIGE PARKS AND GARDENS - Mowe (3 properties)
+        { id: 19, title: 'Vestige Parks - 300sqm', location: 'Mowe, Off Lagos-Ibadan Expressway', price: 3900000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦1,000,000', features: 'C of O, Gated estate, Road network, Electricity, Security, Leisure facilities', developer: 'L-H Investments Ltd' },
+        { id: 20, title: 'Vestige Parks - 500sqm', location: 'Mowe, Off Lagos-Ibadan Expressway', price: 6500000, type: 'Land', sqm: 500, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦1,000,000', features: 'C of O, Gated estate, Road network, Electricity, Security, Leisure facilities', developer: 'L-H Investments Ltd' },
+        { id: 21, title: 'Vestige Parks - 1 Acre (10% Discount!)', location: 'Mowe, Off Lagos-Ibadan Expressway', price: 35100000, type: 'Land', sqm: 4047, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦5,000,000', features: '10% MASSIVE DISCOUNT! C of O, Gated estate, Road network, Electricity, Security, Leisure facilities', developer: 'L-H Investments Ltd' },
+        
+        // FAIRMONT LAGOS - Ikeja (5 properties)
+        { id: 22, title: 'Fairmont Lagos - Studio Apartment', location: 'Ikeja, Lagos', price: 70000000, type: 'Apartment', sqm: 50, image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600', status: 'available', deposit: 'Contact Us', features: 'Fully Furnished, 4 mins from Airport, C of O title, High rental demand, Perfect for short-let', developer: 'Astracrest Investment Limited' },
+        { id: 23, title: 'Fairmont Lagos - One-Bedroom', location: 'Ikeja, Lagos', price: 100000000, type: 'Apartment', sqm: 70, image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600', status: 'available', deposit: 'Contact Us', features: 'Fully Furnished, 4 mins from Airport, C of O title, High rental demand', developer: 'Astracrest Investment Limited' },
+        { id: 24, title: 'Fairmont Lagos - One-Bedroom Loft', location: 'Ikeja, Lagos', price: 125000000, type: 'Apartment', sqm: 85, image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600', status: 'available', deposit: 'Contact Us', features: 'Fully Furnished, 4 mins from Airport, C of O title, Premium finishes', developer: 'Astracrest Investment Limited' },
+        { id: 25, title: 'Fairmont Lagos - Two-Bedroom', location: 'Ikeja, Lagos', price: 140000000, type: 'Apartment', sqm: 100, image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600', status: 'available', deposit: 'Contact Us', features: 'Fully Furnished, 4 mins from Airport, C of O title, Spacious living', developer: 'Astracrest Investment Limited' },
+        { id: 26, title: 'Fairmont Lagos - Two-Bedroom Loft', location: 'Ikeja, Lagos', price: 165000000, type: 'Apartment', sqm: 120, image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600', status: 'available', deposit: 'Contact Us', features: 'Fully Furnished, 4 mins from Airport, C of O title, Ultimate luxury', developer: 'Astracrest Investment Limited' },
+        
+        // THE INHERITANCE PLACE - Olodo, Odeda (2 properties)
+        { id: 27, title: 'The Inheritance Place - 300sqm', location: 'Olodo, Odeda LGA, Oyo', price: 450000, type: 'Land', sqm: 300, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: '₦300,000', features: 'C of O in View, Registered Survey & Deed of Assignment, Perfect for generational wealth', developer: 'Astracrest Investment Limited' },
+        { id: 28, title: 'The Inheritance Place - 600sqm', location: 'Olodo, Odeda LGA, Oyo', price: 900000, type: 'Land', sqm: 600, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: '₦300,000', features: 'C of O in View, Registered Survey & Deed of Assignment, Perfect for generational wealth', developer: 'Astracrest Investment Limited' },
+        
+        // STARCREST THE ANNEX - Alabata (10 properties)
+        { id: 29, title: 'Starcrest - 1 Plot (Agro)', location: 'Alabata, FUNAAB Axis', price: 1000000, type: 'Agro', sqm: 500, image: 'https://i.imgur.com/G8JS2Sp.jpeg', status: 'sold', deposit: 'SOLD ✅', features: '10 Coconut trees - SOLD by Sikirullah! 🎉', developer: 'Astracrest Investment Limited', soldBy: 'Sikirullah Abdulrasheed' },
+        { id: 30, title: 'Starcrest - 2 Plots', location: 'Alabata, FUNAAB Axis', price: 2000000, type: 'Agro', sqm: 1000, image: 'https://i.imgur.com/fwYlcrs.jpeg', status: 'available', deposit: 'Contact Us', features: '20 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 31, title: 'Starcrest - 3 Plots', location: 'Alabata, FUNAAB Axis', price: 3000000, type: 'Agro', sqm: 1500, image: 'https://i.imgur.com/Y9TVhkP.jpeg', status: 'sold', deposit: 'SOLD ✅', features: '30 Coconut trees - SOLD by Chinaka! 🎉', developer: 'Astracrest Investment Limited', soldBy: 'Chinaka Amarachi Favourite' },
+        { id: 32, title: 'Starcrest - 1 Acre (Agro)', location: 'Alabata, FUNAAB Axis', price: 6000000, type: 'Agro', sqm: 4047, image: 'https://i.imgur.com/qY83pQD.jpeg', status: 'sold', deposit: 'SOLD ✅', features: '60 Coconut trees - SOLD by Shyclef Properties! 🎉', developer: 'Astracrest Investment Limited', soldBy: 'Shyclef Properties' },
+        { id: 33, title: 'Starcrest - 2 Acres', location: 'Alabata, FUNAAB Axis', price: 12000000, type: 'Agro', sqm: 8094, image: 'https://i.imgur.com/nUAYVYR.jpeg', status: 'available', deposit: 'Contact Us', features: '120 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 34, title: 'Starcrest - 3 Acres', location: 'Alabata, FUNAAB Axis', price: 18000000, type: 'Agro', sqm: 12140, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: 'Contact Us', features: '18 Plots, 180 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 35, title: 'Starcrest - 5 Acres', location: 'Alabata, FUNAAB Axis', price: 30000000, type: 'Agro', sqm: 20234, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: 'Contact Us', features: '30 Plots, 300 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 36, title: 'Starcrest - 1 Hectare', location: 'Alabata, FUNAAB Axis', price: 15000000, type: 'Agro', sqm: 10000, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: 'Contact Us', features: '150 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 37, title: 'Starcrest - 2 Hectares', location: 'Alabata, FUNAAB Axis', price: 30000000, type: 'Agro', sqm: 20000, image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417bb3?w=600', status: 'available', deposit: 'Contact Us', features: '300 Coconut trees', developer: 'Astracrest Investment Limited' },
+        { id: 38, title: 'Starcrest - 5 Hectares', location: 'Alabata, FUNAAB Axis', price: 75000000, type: 'Agro', sqm: 50000, image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600', status: 'available', deposit: 'Contact Us', features: '75 Plots, 750 Coconut trees', developer: 'Astracrest Investment Limited' }
+    ];
+
+    function formatPrice(price) {
+        return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', minimumFractionDigits: 0 }).format(price);
+    }
+
+    function renderProperties() {
+        const typeFilter = document.getElementById('typeFilter').value;
+        const locationFilter = document.getElementById('locationFilter').value;
+        const priceFilter = document.getElementById('priceFilter').value;
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+        const filtered = properties.filter(prop => {
+            if (typeFilter !== 'all' && prop.type !== typeFilter) return false;
+            if (locationFilter !== 'all' && !prop.location.includes(locationFilter)) return false;
+            if (priceFilter !== 'all') {
+                if (priceFilter === '0-1000000' && prop.price > 1000000) return false;
+                if (priceFilter === '1000000-5000000' && (prop.price < 1000000 || prop.price > 5000000)) return false;
+                if (priceFilter === '5000000-15000000' && (prop.price < 5000000 || prop.price > 15000000)) return false;
+                if (priceFilter === '15000000-30000000' && (prop.price < 15000000 || prop.price > 30000000)) return false;
+                if (priceFilter === '30000000-100000000' && (prop.price < 30000000 || prop.price > 100000000)) return false;
+                if (priceFilter === '100000000+' && prop.price < 100000000) return false;
             }
+            if (searchTerm && !prop.title.toLowerCase().includes(searchTerm) && !prop.location.toLowerCase().includes(searchTerm)) return false;
+            return true;
+        });
+
+        const grid = document.getElementById('propertiesGrid');
+        const noResults = document.getElementById('noResults');
+
+        if (filtered.length === 0) {
+            grid.innerHTML = '';
+            noResults.classList.remove('hidden');
+            return;
         }
-        
-        // Share content
-        async function shareContent(text) {
-            try {
-                if (navigator.share) {
-                    await navigator.share({
-                        title: 'AllScan Result',
-                        text: text
-                    });
-                } else {
-                    await copyToClipboard(text);
-                }
-            } catch (e) {
-                console.error('Share failed:', e);
-            }
-        }
-        
-        // Render history
-        function renderHistory() {
-            const content = document.getElementById('historyContent');
-            
-            if (scanHistory.length === 0) {
-                content.innerHTML = `
-                    <div style="text-align: center; padding: 40px 20px;">
-                        <div style="font-size: 3rem; margin-bottom: 20px;">📭</div>
-                        <h3 style="color: #e2e8f0; margin-bottom: 10px;">No scans yet</h3>
-                        <p style="color: #94a3b8;">Your scan history will appear here</p>
+
+        noResults.classList.add('hidden');
+        grid.innerHTML = filtered.map(prop => `
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
+                <div class="relative h-56">
+                    <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600'">
+                    <div class="absolute top-4 left-4 bg-gold text-black px-2 py-1 rounded text-xs font-semibold">${prop.type}</div>
+                    <div class="absolute top-4 right-4 ${prop.status === 'available' ? 'bg-green-500' : 'bg-red-500'} text-white px-2 py-1 rounded text-xs font-semibold">
+                        ${prop.status === 'available' ? 'Available' : 'SOLD'}
                     </div>
-                `;
-                return;
-            }
-            
-            let html = '';
-            scanHistory.forEach((item, index) => {
-                const timeAgo = formatTimeAgo(item.timestamp);
-                html += `
-                    <div class="history-item" onclick="viewHistoryItem(${index})">
-                        <div style="color: #818cf8; font-size: 0.75rem; margin-bottom: 4px;">${item.type.toUpperCase()}</div>
-                        <div style="color: #e2e8f0; font-size: 0.875rem; margin-bottom: 4px;">${truncateText(item.content, 50)}</div>
-                        <div style="color: #64748b; font-size: 0.75rem;">${timeAgo}</div>
+                    ${prop.status === 'sold' && prop.soldBy ? `
+                    <div class="absolute bottom-4 left-4 bg-black/70 text-white px-2 py-1 rounded text-xs">
+                        🏆 Sold by: ${prop.soldBy}
                     </div>
-                `;
-            });
-            
-            content.innerHTML = html;
-        }
-        
-        // View history item
-        function viewHistoryItem(index) {
-            const item = scanHistory[index];
-            if (item) {
-                currentResult = item;
-                displayResult(item);
-            }
-        }
-        
-        // Clear history
-        function clearHistory() {
-            if (confirm('Clear all scan history?')) {
-                scanHistory = [];
-                saveHistory();
-                renderHistory();
-            }
-        }
-        
-        // Format time ago
-        function formatTimeAgo(timestamp) {
-            const now = new Date();
-            const time = new Date(timestamp);
-            const diff = Math.floor((now - time) / 1000);
-            
-            if (diff < 60) return 'Just now';
-            if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
-            if (diff < 86400) return `${Math.floor(diff / 3600)} hours ago`;
-            return time.toLocaleDateString();
-        }
-        
-        // Truncate text
-        function truncateText(text, maxLength) {
-            if (text.length <= maxLength) return text;
-            return text.substring(0, maxLength) + '...';
-        }
-        
-        // Initialize
-        loadHistory();
-        showMain();
-        
-        // Log instructions
-        console.log('AllScan initialized');
-        console.log('To use camera:');
-        console.log('1. Serve this file over HTTPS or localhost');
-        console.log('2. Click "Start Scanning"');
-        console.log('3. Allow camera access when prompted');
-    </script>
+                    ` : ''}
+                </div>
+                <div class="p-5">
+                    <div class="text-2xl font-bold text-gold mb-2">${formatPrice(prop.price)}</div>
+                    <h3 class="font-bold text-lg mb-2">${prop.title}</h3>
+                    <p class="text-gray-500 text-sm mb-2 flex items-center gap-1">📍 ${prop.location}</p>
+                    <div class="mb-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Deposit: ${prop.deposit}</span>
+                        ${prop.developer ? `<span class="text-xs bg-gold/20 ml-2 px-2 py-1 rounded">${prop.developer}</span>` : ''}
+                    </div>
+                    <div class="flex items-center gap-2 mb-3 text-gray-600 text-xs">
+                        <span>📐 ${prop.sqm} sqm</span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-3 line-clamp-2">${prop.features}</p>
+                    <div class="text-xs text-gray-400 mb-2">🏢 Provided by URRG</div>
+                    <a href="https://wa.me/2349071049271?text=Hello%2C%20I'm%20interested%20in%20${encodeURIComponent(prop.title)}%20located%20at%20${encodeURIComponent(prop.location)}%20priced%20at%20${formatPrice(prop.price)}%0A%0APlease%20send%20me%20more%20details%20about%20this%20property." target="_blank" class="block bg-charcoal text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-charcoal/90 transition">
+                        ${prop.status === 'available' ? 'Inquire on WhatsApp →' : 'Sold Out - Check Other Properties →'}
+                    </a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function resetFilters() {
+        document.getElementById('typeFilter').value = 'all';
+        document.getElementById('locationFilter').value = 'all';
+        document.getElementById('priceFilter').value = 'all';
+        document.getElementById('searchInput').value = '';
+        renderProperties();
+    }
+
+    document.getElementById('typeFilter').addEventListener('change', renderProperties);
+    document.getElementById('locationFilter').addEventListener('change', renderProperties);
+    document.getElementById('priceFilter').addEventListener('change', renderProperties);
+    document.getElementById('searchInput').addEventListener('input', renderProperties);
+
+    renderProperties();
+</script>
 </body>
 </html>
